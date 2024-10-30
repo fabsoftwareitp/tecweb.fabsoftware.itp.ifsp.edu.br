@@ -226,7 +226,9 @@ body {
     font-size: .9rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: white
+    color: white;
+    background-color: #000022;
+    text-align: center;
 }
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover,
@@ -260,7 +262,8 @@ body {
     }
     #mainNav .navbar-nav>li.nav-item>a.nav-link,
     #mainNav .navbar-nav>li.nav-item>a.nav-link:focus {
-        color: hsla(0, 0%, 100%, .7)
+        color: hsla(0, 0%, 100%, .7);
+        background-color: transparent;
     }
     #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover,
     #mainNav .navbar-nav>li.nav-item>a.nav-link:hover {
