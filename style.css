@@ -1,13 +1,189 @@
-/* ---- particles.js container ---- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #2C2C54;
-  color: red;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif; 
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.traco {
+    background-color: #9B7FE9;
+    width: 180px;
+    height: 6px;
+    margin-bottom: 100px;
+}
+
+#comoIngressar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F1EFFF;
+}
+
+#ingressar {
+    display: flex;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+#passosDireita, #passosEsquerda {
+    display: flex;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
+    line-height: 2.8rem;
+    font-size: 2rem;
+    color: #0B0612;
+    width: 26.5vw;
+}
+
+#passosEsquerda p{
+    text-align: right;
+    margin: 0;
+    margin-right: 2.8vw;
+}
+
+#passosDireita p{
+    text-align: left;
+    margin: 0;
+    margin-left: 2.8vw;
+}
+
+.passos {
+    font-family: "Montserrat", sans-serif;
+    color: #4F3678;
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+#passosDireita .passos, #resul {
+    padding-top: 180px;
+}
+
+.bolinha {
+    width: 35px;
+    height: 35px;
+    border: 3px solid #4F3678;
+    border-radius: 50%;
+    background-color: #F1EFFF;
+}
+
+.bolinha:hover {
+    transition: 0.3s;
+    background-color: #4F3678;
+}
+
+#bolinhas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 5px;
+    background-color: #4F3678;
+    align-items: center;
+    
+}
+
+#containerPassos {
+    display: flex;
+    margin-left: 20vw;
+}
+
+#docentes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.card {
+    width: 450px;
+    height: 400px;
+    perspective: 2000px;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    border: solid 6px white;
+}
+
+.frontRoxa {
+    background-color: #4F3678;
+    width: 450px;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 2, 0.452);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+  }
+
+.card:hover .content {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+  }
+
+.front, .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    text-align: center;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.back {
+    transform: rotateY( 180deg );
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front p{
+    margin: 0;
+    font-family: "Montserrat", serif;
+}
+
+.back p {
+    font-family: "Montserrat", serif;
+    width: 90%;
+    text-align: justify;
+}
+
+.nomeProf {
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#profs {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    width: 80vw;
+
 }
