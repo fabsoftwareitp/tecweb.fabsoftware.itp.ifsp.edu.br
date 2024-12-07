@@ -20,6 +20,43 @@ h2 {
     margin-bottom: 100px;
 }
 
+#areas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Montserrat", serif;
+    margin-bottom: 100px;
+}
+
+#areas b {
+    font-family: "Poppins", serif;
+    border-right: #4F3678 5px solid;
+    width: 350px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#gbd, #devWeb, #sistemas {
+    display: flex;
+    font-size: 2rem;
+    justify-content: flex-start;
+    width: 55vw;
+}
+
+#sistemas {
+    border-top: solid 5px #4F3678;
+    border-bottom: solid 5px #4F3678;
+}
+
+#areas ul {
+    list-style: none;
+}
+
+#tblAreas {
+    line-height: 45px;
+}
+
 #comoIngressar {
     display: flex;
     flex-direction: column;
