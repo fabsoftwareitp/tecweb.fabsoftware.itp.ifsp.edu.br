@@ -20,11 +20,75 @@ h2 {
     margin-bottom: 100px;
 }
 
+#tracoInicial {
+    width: 100px;
+    height: 10px;
+    background-color:#9B7FE9;
+    margin-bottom: 25px;
+}
+
+header {
+    width: 98vw;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0b06127a;
+}
+
+header img {
+    width: 10vw;
+    margin-left: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat", serif;
+    font-size: 1.4rem;
+    padding: 25px;
+}
+
+#pgInicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #DAE0F3;
+    color: #ffffff;
+    height: 100vh;
+    background-image: url(img/fundo.png);
+}
+
+#pgInicial p {
+    background-color: #25163D;
+    font-family: "Montserrat", serif;
+    width: 50vw;
+    font-size: 1.5rem;
+    line-height: 40px;
+}
+
+#pgInicial h1{
+    font-size: 4rem;
+    font-family: "Poppins", serif;
+    background-color: #25163D;
+    width: 50vw;
+}
+
+#containerInicial {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #sobre {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 100px;
+    color: #0B0612;
 }
 
 #containerSobre {
@@ -38,7 +102,7 @@ h2 {
 }
 
 .sobre {
-    padding: 70px;
+    padding: 5vw;
     width: 280px;
 }
 
@@ -124,6 +188,10 @@ h2 {
     margin-left: 2.8vw;
 }
 
+#passosEsquerda {
+    padding-top: 10px;
+}
+
 .passos {
     font-family: "Montserrat", sans-serif;
     color: #4F3678;
@@ -132,7 +200,7 @@ h2 {
 }
 
 #passosDireita .passos, #resul {
-    padding-top: 180px;
+    padding-top: 250px;
 }
 
 .bolinha {
@@ -254,5 +322,21 @@ h2 {
     align-content: space-around;
     justify-content: space-evenly;
     width: 80vw;
+}
 
+.imgCampus {
+    /* width: 634px; */
+    width: 31vw;
+    /* height: 500px; */
+    height: 25vw;
+    background-color: grey;
+    margin: 0.75vw;
+}
+
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px red;
+    width: auto;
+    justify-content: center;
 }
