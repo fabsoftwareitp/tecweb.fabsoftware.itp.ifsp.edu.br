@@ -20,12 +20,43 @@ h2 {
     margin-bottom: 100px;
 }
 
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+#containerSobre {
+    display: flex;
+    font-size: 2rem;
+    font-family: "Montserrat", serif;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 75vw;
+    justify-content: space-between;
+}
+
+.sobre {
+    padding: 70px;
+    width: 280px;
+}
+
+.sobre b {
+    font-family: "Poppins", serif;
+}
+
+.sobre p {
+    margin: 0;
+}
+
 #areas {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: "Montserrat", serif;
-    margin-bottom: 100px;
+    padding-bottom: 100px;
+    background-color: #F1EFFF;
 }
 
 #areas b {
@@ -35,6 +66,7 @@ h2 {
     text-align: center;
     display: flex;
     align-items: center;
+    color: #0B0612;
 }
 
 #gbd, #devWeb, #sistemas {
