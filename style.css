@@ -7,7 +7,7 @@ body {
 }
 
 h2 {
-    font-family: "Quicksand", sans-serif; 
+    font-family: "Quicksand", sans-serif;
     font-size: 3rem;
     text-align: center;
     margin-top: 100px;
@@ -23,7 +23,7 @@ h2 {
 #tracoInicial {
     width: 100px;
     height: 10px;
-    background-color:#9B7FE9;
+    background-color: #9B7FE9;
     margin-bottom: 25px;
 }
 
@@ -68,7 +68,7 @@ header a {
     line-height: 40px;
 }
 
-#pgInicial h1{
+#pgInicial h1 {
     font-size: 4rem;
     font-family: "Poppins", serif;
     background-color: #25163D;
@@ -133,7 +133,9 @@ header a {
     color: #0B0612;
 }
 
-#gbd, #devWeb, #sistemas {
+#gbd,
+#devWeb,
+#sistemas {
     display: flex;
     font-size: 2rem;
     justify-content: flex-start;
@@ -166,7 +168,8 @@ header a {
     width: 100%;
 }
 
-#passosDireita, #passosEsquerda {
+#passosDireita,
+#passosEsquerda {
     display: flex;
     flex-direction: column;
     font-family: "Raleway", sans-serif;
@@ -176,13 +179,13 @@ header a {
     width: 26.5vw;
 }
 
-#passosEsquerda p{
+#passosEsquerda p {
     text-align: right;
     margin: 0;
     margin-right: 2.8vw;
 }
 
-#passosDireita p{
+#passosDireita p {
     text-align: left;
     margin: 0;
     margin-left: 2.8vw;
@@ -199,7 +202,8 @@ header a {
     font-size: 2.3rem;
 }
 
-#passosDireita .passos, #resul {
+#passosDireita .passos,
+#resul {
     padding-top: 250px;
 }
 
@@ -223,7 +227,7 @@ header a {
     width: 5px;
     background-color: #4F3678;
     align-items: center;
-    
+
 }
 
 #containerPassos {
@@ -272,14 +276,15 @@ header a {
     transition: transform 1s;
     transform-style: preserve-3d;
     border-radius: 10px;
-  }
+}
 
 .card:hover .content {
-    transform: rotateY( 180deg ) ;
+    transform: rotateY(180deg);
     transition: transform 0.5s;
-  }
+}
 
-.front, .back {
+.front,
+.back {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -290,14 +295,14 @@ header a {
 }
 
 .back {
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
     font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.front p{
+.front p {
     margin: 0;
     font-family: "Montserrat", serif;
 }
@@ -324,11 +329,17 @@ header a {
     width: 80vw;
 }
 
+#estrutura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .imgCampus {
     /* width: 634px; */
     width: 31vw;
     /* height: 500px; */
-    height: 25vw;
+    height: 20vw;
     background-color: grey;
     margin: 0.75vw;
 }
@@ -336,7 +347,47 @@ header a {
 #galeria {
     display: flex;
     flex-wrap: wrap;
-    border: solid 2px red;
     width: auto;
     justify-content: center;
+}
+
+#localizacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    width: 98.5vw;
+}
+
+footer {
+    background-color: #25163D;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#endereco {
+    text-align: center;
+    width: 500px;
+    font-size: 1.3rem;
+    padding: 4vw;
+}
+
+#contato,
+#fabrica {
+    text-align: center;
+    width: 350px;
+    font-size: 1.3rem;
+    padding: 4vw;
+}
+
+#contato img {
+    width: 50px;
 }
