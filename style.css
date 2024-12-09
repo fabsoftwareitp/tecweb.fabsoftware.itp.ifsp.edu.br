@@ -15,8 +15,8 @@ h2 {
 
 .traco {
     background-color: #9B7FE9;
-    width: 180px;
-    height: 6px;
+    width: 8.5vw;
+    height: 0.3vw;
     margin-bottom: 100px;
 }
 
@@ -46,7 +46,7 @@ header a {
     color: white;
     font-family: "Montserrat", serif;
     font-size: 1.4rem;
-    padding: 25px;
+    padding: 1.8vw;
 }
 
 #pgInicial {
@@ -65,7 +65,7 @@ header a {
     font-family: "Montserrat", serif;
     width: 50vw;
     font-size: 1.5rem;
-    line-height: 40px;
+    line-height: 2.5rem;
 }
 
 #pgInicial h1 {
@@ -97,13 +97,13 @@ header a {
     font-family: "Montserrat", serif;
     text-align: center;
     flex-wrap: wrap;
-    width: 75vw;
-    justify-content: space-between;
+    width: 85vw;
+    justify-content: space-around;
 }
 
 .sobre {
-    padding: 5vw;
-    width: 280px;
+    padding: 4vw;
+    width: 14vw;
 }
 
 .sobre b {
@@ -112,6 +112,11 @@ header a {
 
 .sobre p {
     margin: 0;
+}
+
+.sobre img {
+    width: 4.8vw;
+    min-width: 50px;
 }
 
 #areas {
@@ -125,8 +130,9 @@ header a {
 
 #areas b {
     font-family: "Poppins", serif;
-    border-right: #4F3678 5px solid;
-    width: 350px;
+    border-right: #4F3678 0.25vw solid;
+    width: 16vw;
+    min-width: 180px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -140,11 +146,12 @@ header a {
     font-size: 2rem;
     justify-content: flex-start;
     width: 55vw;
+    min-width: 613px;
 }
 
 #sistemas {
-    border-top: solid 5px #4F3678;
-    border-bottom: solid 5px #4F3678;
+    border-top: solid 0.25vw #4F3678;
+    border-bottom: solid 0.25vw #4F3678;
 }
 
 #areas ul {
@@ -152,7 +159,7 @@ header a {
 }
 
 #tblAreas {
-    line-height: 45px;
+    line-height: 2.8rem;
 }
 
 #comoIngressar {
@@ -166,6 +173,10 @@ header a {
     display: flex;
     padding-bottom: 100px;
     width: 100%;
+}
+
+#ingressar img {
+    width: 19vw;
 }
 
 #passosDireita,
@@ -204,12 +215,12 @@ header a {
 
 #passosDireita .passos,
 #resul {
-    padding-top: 250px;
+    padding-top: 15.6rem;
 }
 
 .bolinha {
-    width: 35px;
-    height: 35px;
+    width: 1.8vw;
+    height: 1.8vw;
     border: 3px solid #4F3678;
     border-radius: 50%;
     background-color: #F1EFFF;
@@ -224,10 +235,9 @@ header a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 5px;
+    width: 0.3vw;
     background-color: #4F3678;
     align-items: center;
-
 }
 
 #containerPassos {
@@ -243,29 +253,35 @@ header a {
 }
 
 .card {
-    width: 450px;
-    height: 400px;
+    width: 22vw;
+    height: 20vw;
+    min-width: 280px;
+    min-height: 250px;
     perspective: 2000px;
-    border-radius: 10px;
+    border-radius: 1vw;
+    margin-bottom: 3.5vw;
 }
 
 .card img {
-    width: 180px;
-    height: 180px;
+    width: 8.5vw;
+    height: 8.5vw;
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 40%;
     left: 50%;
-    border: solid 6px white;
+    border: solid 0.3vw white;
+    min-width: 120px;
+    min-height: 120px;
 }
 
 .frontRoxa {
     background-color: #4F3678;
-    width: 450px;
-    height: 200px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    width: 100%;
+    height: 9.5vw;
+    min-height: 100px;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
 }
 
 .content {
@@ -275,7 +291,7 @@ header a {
     box-shadow: 0 2px 8px rgba(0, 0, 2, 0.452);
     transition: transform 1s;
     transform-style: preserve-3d;
-    border-radius: 10px;
+    border-radius: 1vw;
 }
 
 .card:hover .content {
@@ -291,7 +307,7 @@ header a {
     background: white;
     text-align: center;
     backface-visibility: hidden;
-    border-radius: 10px;
+    border-radius: 1vw;
 }
 
 .back {
@@ -314,8 +330,9 @@ header a {
 }
 
 .nomeProf {
-    margin-top: 60px;
-    padding-top: 60px;
+    margin-top: 7vw;
+    padding-top: 3vw;
+    /* padding-top: 5vw;  */
     padding-bottom: 10px;
     font-weight: bold;
     font-size: 1.5rem;
@@ -342,6 +359,8 @@ header a {
     height: 20vw;
     background-color: grey;
     margin: 0.75vw;
+    min-width: 400px;
+    min-height: 300px;
 }
 
 #galeria {
@@ -359,6 +378,7 @@ header a {
 
 iframe {
     width: 98.5vw;
+    height: 22vw;
 }
 
 footer {
@@ -375,19 +395,81 @@ footer {
 
 #endereco {
     text-align: center;
-    width: 500px;
+    width: 25vw;
     font-size: 1.3rem;
     padding: 4vw;
+}
+
+#endereco img {
+    width: 12vw;
 }
 
 #contato,
 #fabrica {
     text-align: center;
-    width: 350px;
+    width: 20vw;
     font-size: 1.3rem;
     padding: 4vw;
 }
 
+#fabrica img {
+    width: 12vw;
+}
+
 #contato img {
-    width: 50px;
+    width: 2.5vw;
+}
+
+@media (width <= 1700px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (width <= 1000px) {
+    #pgInicial p, #pgInicial h1 {
+        width: 60vw;
+    }
+
+    #areas b {
+        width: 22vw;
+    }
+    
+    #gbd,
+    #devWeb,
+    #sistemas {
+        width: 70vw;
+    }
+
+    .nomeProf {
+        padding-top: 7vw; 
+    }
+}
+
+@media (width <= 750px) {
+
+    #comoIngressar img {
+        display: none;
+    }
+
+    #containerPassos {
+        justify-content: space-around;
+        margin: 0;
+    }
+
+    #ingressar {
+        justify-content: center;
+    }
+
+    #passosDireita, #passosEsquerda {
+        width: 45vw;
+        /* min-width: 300px; */
+    }
+
+}
+
+@media (width <= 650px) {
+    html {
+        font-size: 8px;
+    }
 }
