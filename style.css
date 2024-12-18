@@ -46,6 +46,7 @@ header {
     display: flex;
     justify-content: center;
     cursor: pointer;
+    /* position: absolute; */
 }
 
 .bar {
@@ -66,7 +67,9 @@ header {
     flex-direction: column;
     justify-content: space-around;
     transition: 0.5s;
+    z-index: 5;
 }
+
 
 .menuClick #bar1 {
     transform: translateY(8px) rotateZ(-135deg);
@@ -586,7 +589,6 @@ footer {
 
 }
 
-
 @media (width <=650px) {
     html {
         font-size: 9px;
@@ -596,7 +598,7 @@ footer {
         flex-direction: column-reverse;
     }
 
-    #nav {
+    .nav {
         display: none;
     }
 
@@ -604,10 +606,29 @@ footer {
         display: block;
     }
 
-    .menuClick {
+    .menuLateral{
         display: block;
+        position: absolute;
+        top: 0;
+        right: 0vw;
+        height: 100vh;
+        background-color: #0b0612;
     }
 
+    .menuLateral ul {
+        flex-direction: column-reverse;
+        padding: 0;
+        margin-top: 60px;
+    }
+
+    .menuLateral a {
+        font-size: 2rem;
+        padding: 30px;
+    }
+
+    .menuLateral li {
+        margin: 25px;
+    }
 
 }
 
