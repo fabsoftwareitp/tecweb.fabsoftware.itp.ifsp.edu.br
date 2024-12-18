@@ -563,7 +563,6 @@ footer {
 
     #passosDireita {
         width: 45vw;
-        /* min-width: 300px; */
     }
 
     #passosEsquerda {
@@ -612,7 +611,7 @@ footer {
         top: 0;
         right: 0vw;
         height: 100vh;
-        background-color: #0b0612;
+        background-color: #0b0612f8;
     }
 
     .menuLateral ul {
@@ -639,7 +638,6 @@ footer {
 
     #pgInicial h1 {
         font-size: 3.2rem;
-        border: solid red 2px;
     }
 
     #pgInicial p {
