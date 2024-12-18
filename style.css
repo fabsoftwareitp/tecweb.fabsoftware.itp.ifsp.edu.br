@@ -45,6 +45,7 @@ header {
 #menu {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .bar {
@@ -53,6 +54,8 @@ header {
     border-radius: 2px;
     background-color: white;
     display: none;
+    transform: rotateZ(0deg);
+    transition: 0.5s;
 }
 
 #menuHamb {
@@ -62,6 +65,21 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: 0.5s;
+}
+
+.menuClick #bar1 {
+    transform: translateY(8px) rotateZ(-135deg);
+    transition: 0.5s;
+}
+
+.menuClick #bar2 {
+    opacity: 0;
+}
+
+.menuClick #bar3 {
+    transform: translateY(-9px) rotateZ(135deg);
+    transition: 0.5s;
 }
 
 header img {
@@ -175,8 +193,7 @@ header a {
     display: flex;
     font-size: 2rem;
     justify-content: flex-start;
-    width: 55vw;
-    min-width: 613px;
+    width: auto;
 }
 
 #sistemas {
@@ -236,7 +253,8 @@ header a {
     padding-top: 10px;
 }
 
-.passos {
+.passos,
+#p {
     font-family: "Montserrat", sans-serif;
     color: #4F3678;
     font-weight: bold;
@@ -384,15 +402,16 @@ header a {
     align-items: center;
 }
 
-.imgCampus {
+.imgCampus img {
     /* width: 634px; */
     width: 31vw;
     /* height: 500px; */
     height: 20vw;
-    background-color: grey;
     margin: 0.75vw;
     min-width: 350px;
     min-height: 250px;
+    object-fit: cover;
+    box-shadow: 0px 0px 5px rgba(0, 0, 2, 0.452);
 }
 
 #galeria {
@@ -428,8 +447,8 @@ footer {
 
 #endereco {
     text-align: center;
-    /* width: 25vw; */
-    width: 280px;
+    width: 25vw;
+    /* width: 280px; */
     font-size: 1.3rem;
     padding: 4vw;
 }
@@ -458,9 +477,14 @@ footer {
     min-width: 25px;
 }
 
-@media (width <= 1700px) {
+.enem,
+.resul {
+    display: none;
+}
+
+@media (width <=1700px) {
     html {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .nomeProf {
@@ -468,15 +492,17 @@ footer {
     }
 }
 
-@media (width <= 1000px) {
-    #pgInicial p, #pgInicial h1 {
+@media (width <=1000px) {
+
+    #pgInicial p,
+    #pgInicial h1 {
         width: 60vw;
     }
 
     #areas b {
         width: 22vw;
     }
-    
+
     #gbd,
     #devWeb,
     #sistemas {
@@ -484,18 +510,39 @@ footer {
     }
 
     .nomeProf {
-        padding-top: 45px; 
+        padding-top: 45px;
     }
 }
 
-@media (width <= 750px) {
+@media (width <=750px) {
 
     #containerInicial {
         width: 90vw;
     }
 
-    #pgInicial p, #pgInicial h1 {
+    #pgInicial p,
+    #pgInicial h1 {
         width: 80vw;
+    }
+
+    #gbd,
+    #devWeb,
+    #sistemas {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        border: none;
+    }
+
+    #areas b {
+        border: none;
+        border-bottom: solid 0.3rem #4F3678;
+        width: auto;
+    }
+
+    #areas ul {
+        padding-left: 0;
     }
 
     #comoIngressar img {
@@ -511,19 +558,40 @@ footer {
         justify-content: center;
     }
 
-    #passosDireita, #passosEsquerda {
+    #passosDireita {
         width: 45vw;
         /* min-width: 300px; */
     }
+
+    #passosEsquerda {
+        display: none;
+    }
+
+    #passosDireita {
+        width: 70vw;
+        margin-left: 15px;
+    }
+    
+    #passosDireita .passos {
+        padding-top: 0rem;
+    }
+
+    .resul, .enem {
+        display: block;
+    }
+
+    #p, #passosDireita .passos  {
+        padding-top: 5rem;
+    }
+
 }
 
-@media (width <= 650px) {
+
+@media (width <=650px) {
     html {
         font-size: 9px;
     }
-}
 
-@media (width <= 610px) {
     footer {
         flex-direction: column-reverse;
     }
@@ -535,9 +603,31 @@ footer {
     .bar {
         display: block;
     }
+
+    .menuClick {
+        display: block;
+    }
+
+
 }
 
-@media (width <= 380px) {
+@media (width <=400px) {
+    #tracoInicial {
+        height: 5px;
+    }
+
+    #pgInicial h1 {
+        font-size: 3.2rem;
+        border: solid red 2px;
+    }
+
+    #pgInicial p {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+}
+
+@media (width <=380px) {
     .imgCampus {
         min-width: 300px;
     }

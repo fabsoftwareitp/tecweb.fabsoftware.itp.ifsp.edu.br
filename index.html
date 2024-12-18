@@ -17,7 +17,7 @@
 
             <div id="menu">
 
-                <div id="menuHamb">
+                <div id="menuHamb" onclick="menu()">
                     <div id="bar1" class="bar"></div>
                     <div id="bar2" class="bar"></div>
                     <div id="bar3" class="bar"></div>
@@ -26,12 +26,12 @@
                 <div id="nav">
                     <b>
                         <ul>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#areas">Disciplinas</a></li>
-                        <li><a href="">Como Ingressar</a></li>
-                        <li><a href="">Docentes</a></li>
-                        <li><a href="">Estrutura</a></li>
-                    </ul>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#areas">Disciplinas</a></li>
+                            <li><a href="">Como Ingressar</a></li>
+                            <li><a href="">Docentes</a></li>
+                            <li><a href="">Estrutura</a></li>
+                        </ul>
                     </b>
                 </div>
             </div>
@@ -175,8 +175,15 @@
                 </div>
 
                 <div id="passosDireita">
+                    <p id="p" class="enem" >Faça o ENEM</p>
+                    <p class="enem">Participe da ultima edicao do ENEM. Sua nota no ENEM sera usada para o processo seletivo.</p>
+
                     <p class="passos">Inscrição no SISU</p>
                     <p>Selecione o curso "Tecnologia em Sistemas para Internet" no IFSP - Campus Itapetininga.</p>
+
+                   <p id="p" class="resul" id="resultado">Resultado</p>
+                    <p class="resul" >Após o fechamento das inscrições, vocé deve acessar o site do Sisu para verificar se foi aprovado
+                        para o curso desejado.</p>
 
                     <p class="passos">Matricula</p>
                     <p>Caso seja selecionado, vocé precisará realizar a matrícula conforme as orientações do câmpus.</p>
@@ -308,28 +315,28 @@
 
         <div id="galeria">
             <div class="imgCampus">
-                <img src="" alt="">
+                <img src="/img/estrutura/auditorioInfo.jpeg" alt="">
             </div>
 
             <div class="imgCampus">
-                <img src="" alt="">
+                <img src="/img/estrutura/biblioteca.jpg" alt="">
             </div>
 
             <div class="imgCampus">
-                <img src="" alt="">
+                <img src="/img/estrutura/hardware.jpg" alt="">
 
             </div>
 
             <div class="imgCampus">
-                <img src="" alt="">
+                <img src="/img/estrutura/labA.jpg" alt="">
             </div>
 
             <div class="imgCampus">
-                <img src="" alt="">
+                <img src="/img/estrutura/livros.jpg" alt="">
             </div>
 
             <div class="imgCampus">
-                <img src="" alt="">
+                <img src="/img/estrutura/labC.jpg" alt="">
             </div>
         </div>
 
@@ -365,6 +372,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function menu() {
+            document.getElementById("menuHamb").classList.toggle("menuClick");
+            document.getElementById("nav").classList.toggle("menuClick");
+            // document.getElementById("menu-bg").classList.toggle("change-bg");
+        }
+    </script>
 
 </body>
 
