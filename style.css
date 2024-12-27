@@ -28,8 +28,8 @@ h2 {
 }
 
 header {
-    width: 98vw;
-    height: 8vh;
+    width: 100%;
+    height: 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -69,7 +69,6 @@ header {
     z-index: 5;
 }
 
-
 .menuClick #bar1 {
     transform: translateY(8px) rotateZ(-135deg);
     transition: 0.5s;
@@ -86,8 +85,7 @@ header {
 
 header img {
     width: 10vw;
-    margin-left: 10px;
-    min-width: 100px;
+    min-width: 110px;
 }
 
 header a {
@@ -153,6 +151,7 @@ header a {
 .sobre {
     padding: 4vw;
     width: 14vw;
+    width: 20%;
     min-width: 180px;
 }
 
@@ -166,7 +165,7 @@ header a {
 
 .sobre img {
     width: 4.8vw;
-    min-width: 50px;
+    min-width: 28%;
 }
 
 #areas {
@@ -181,12 +180,13 @@ header a {
 #areas b {
     font-family: "Poppins", serif;
     border-right: #4F3678 0.3rem solid;
-    width: 16vw;
-    min-width: 180px;
+    width: 25%;
+    min-width: 205px;
     text-align: center;
     display: flex;
     align-items: center;
     color: #0B0612;
+    border: solid red 2px;
 }
 
 #gbd,
@@ -332,8 +332,7 @@ header a {
 .frontRoxa {
     background-color: #4F3678;
     width: 100%;
-    height: 9.5vw;
-    min-height: 120px;
+    height: 48%;
     border-top-left-radius: 1vw;
     border-top-right-radius: 1vw;
 }
@@ -454,7 +453,7 @@ footer {
 
 #endereco {
     text-align: center;
-    width: 25vw;
+    width: 30%;
     /* width: 280px; */
     font-size: 1.3rem;
     padding: 4vw;
@@ -633,9 +632,14 @@ footer {
         margin: 25px;
     }
 
+    #endereco {
+        width: inherit;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
 }
 
-@media (width <=400px) {
+@media (width <= 400px) {
     #tracoInicial {
         height: 5px;
     }
@@ -647,11 +651,5 @@ footer {
     #pgInicial p {
         font-size: 1.3rem;
         line-height: 2rem;
-    }
-}
-
-@media (width <=380px) {
-    .imgCampus {
-        min-width: 300px;
     }
 }
