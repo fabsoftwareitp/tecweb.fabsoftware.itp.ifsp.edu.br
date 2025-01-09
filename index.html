@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="modo-escuro">
+
+    <div id="lampada" onclick="lampada()"></div>
 
     <section id="pgInicial">
         <header>
@@ -159,10 +161,10 @@
 
                 <div id="passosEsquerda">
 
-                    <p class="passos">Faça o ENEM</p>
+                    <h3 class="passos">Faça o ENEM</h3>
                     <p>Participe da ultima edicao do ENEM. Sua nota no ENEM sera usada para o processo seletivo.</p>
 
-                    <p class="passos" id="resul">Resultado</p>
+                    <h3 class="passos" id="resul">Resultado</h3>
                     <p>Após o fechamento das inscrições, vocé deve acessar o site do Sisu para verificar se foi aprovado
                         para o curso desejado.</p>
                 </div>
@@ -175,19 +177,19 @@
                 </div>
 
                 <div id="passosDireita">
-                    <p id="p" class="enem">Faça o ENEM</p>
+                    <h3 id="p" class="enem">Faça o ENEM</h3>
                     <p class="enem">Participe da ultima edicao do ENEM. Sua nota no ENEM sera usada para o processo
                         seletivo.</p>
 
-                    <p class="passos">Inscrição no SISU</p>
+                    <h3 class="passos">Inscrição no SISU</h3>
                     <p>Selecione o curso "Tecnologia em Sistemas para Internet" no IFSP - Campus Itapetininga.</p>
 
-                    <p id="p" class="resul" id="resultado">Resultado</p>
+                    <h3 id="p" class="resul" id="resultado">Resultado</h3>
                     <p class="resul">Após o fechamento das inscrições, vocé deve acessar o site do Sisu para verificar
                         se foi aprovado
                         para o curso desejado.</p>
 
-                    <p class="passos">Matricula</p>
+                    <h3 class="passos">Matricula</h3>
                     <p>Caso seja selecionado, vocé precisará realizar a matrícula conforme as orientações do câmpus.</p>
                 </div>
             </div>
@@ -205,9 +207,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4592760T3" alt="">
-                        <p class="nomeProf">Gerson Nunho Carriel</p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4592760T3"
+                                alt="">
+                            <p class="nomeProf">Gerson Nunho Carriel</p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Doutorando em Processos Tecnológicos pela Universidade de Sorocaba, possui graduação em
@@ -222,9 +227,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8491521J2" alt="">
-                        <p class="nomeProf">Anderson Bernardo de Almeida</p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8491521J2"
+                                alt="">
+                            <p class="nomeProf">Anderson Bernardo de Almeida</p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Possui graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela Faculdade de
@@ -240,9 +248,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4315280D6" alt="">
-                        <p class="nomeProf">Flavio Mania</p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4315280D6"
+                                alt="">
+                            <p class="nomeProf">Flavio Mania</p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Possui graduação em Ciência da Computação pela Universidade Paulista (2001). Atualmente é
@@ -257,9 +268,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4325297A1" alt="">
-                        <p class="nomeProf">Wilton Moreira Júnior</p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4325297A1"
+                                alt="">
+                            <p class="nomeProf">Wilton Moreira Júnior</p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Possui graduação em pela Associação de Ensino de Itapetininga (2006), Especialização em
@@ -275,9 +289,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4306412E3" alt="">
-                        <p class="nomeProf">Eline Faliane Welter</p>
-                        <p>Professora</p>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4306412E3"
+                                alt="">
+                            <p class="nomeProf">Eline Faliane Welter</p>
+                            <p>Professora</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Possui graduação em Sistemas de Informação pela Faculdade de Ciências Contábeis de
@@ -293,9 +310,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4056502J6" alt="">
-                        <p class="nomeProf">Rafael de Almeida Brochado</p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4056502J6"
+                                alt="">
+                            <p class="nomeProf">Rafael de Almeida Brochado</p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Possui especialização em Gestão de Ensino a Distância pela Universidade Federal Fluminense
@@ -311,9 +331,12 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4206858U8" alt="">
-                        <p class="nomeProf">Ramiro Tadeu Wisnieski</p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4206858U8"
+                                alt="">
+                            <p class="nomeProf">Ramiro Tadeu Wisnieski</p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Possui graduação em Análise e desenvolvimento de Sistemas pelo Instituto Federal de Educação,
@@ -328,10 +351,13 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4292427H7" alt="">
-                        <p class="nomeProf">Renato Franchi Lopes dos Santos
-                        </p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4292427H7"
+                                alt="">
+                            <p class="nomeProf">Renato Franchi Lopes dos Santos
+                            </p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
                         <p>Atualmente é professor do curso técnico em informática integrado ao Ensino Médio do Instituto
@@ -347,17 +373,23 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4346010A2" alt="">
-                        <p class="nomeProf">Robson João Gregório Rodrigues
-                        </p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4346010A2"
+                                alt="">
+                            <p class="nomeProf">Robson João Gregório Rodrigues
+                            </p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
-                        <p>Possui Mestrado em Tecnologia - FT Unicamp, Especialização em Engenharia de Sistemas - ESAB,
-                            graduação em TECNOLOGIA DA INFORMATICA - Fatec Indústria de Nutrição e Saúde Animal (2011).
+                        <p>Possui Mestrado em Tecnologia - FT Unicamp, Especialização em Engenharia de Sistemas -
+                            ESAB,
+                            graduação em TECNOLOGIA DA INFORMATICA - Fatec Indústria de Nutrição e Saúde Animal
+                            (2011).
                             Atualmente é Professor EBTT, de Programação e Banco de
                             Dados, no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus de
-                            Itapetininga. Tem experiência na área de Ciência da Computação, com ênfase em Programação e
+                            Itapetininga. Tem experiência na área de Ciência da Computação, com ênfase em
+                            Programação e
                             Banco de Dados</p>
                     </div>
                 </div>
@@ -367,14 +399,19 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4456721T7" alt="">
-                        <p class="nomeProf">Danilo Camargo Bueno
-                        </p>
-                        <p>Professor</p>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4456721T7"
+                                alt="">
+                            <p class="nomeProf">Danilo Camargo Bueno
+                            </p>
+                            <p>Professor</p>
+                        </div>
                     </div>
                     <div class="back">
-                        <p>Possui graduação em Bacharelado em Informática pela Universidade Estadual de Maringá (2014) e
-                            mestrado em Ciência da Computação pela Universidade Federal de São Carlos (2017). Tem experiência na área de Ciência da
+                        <p>Possui graduação em Bacharelado em Informática pela Universidade Estadual de Maringá
+                            (2014) e
+                            mestrado em Ciência da Computação pela Universidade Federal de São Carlos (2017). Tem
+                            experiência na área de Ciência da
                             Computação, atuando principalmente nos seguintes temas: Web, Web Mobile, User Interface
                             Adaptation, Multimodal interfaces, Framework front-end e Context-aware interfaces.
                         </p>
@@ -386,14 +423,20 @@
                 <div class="content">
                     <div class="front">
                         <div class="frontRoxa"></div>
-                        <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4774136Y3" alt="">
-                        <p class="nomeProf">Carlos Henrique da Silva Santos
-                        </p>
-                        <p>Professora</p>
+                        <div id="imgProf"><img
+                                src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4774136Y3"
+                                alt="">
+                            <p class="nomeProf">Carlos Henrique da Silva Santos
+                            </p>
+                            <p>Professora</p>
+                        </div>
+
                     </div>
                     <div class="back">
-                        <p>Possui graduação em Tecnologia em Informática pela Universidade Estadual de Campinas (2003),
-                            mestrado em Engenharia Elétrica pela Universidade Estadual de Campinas (2005) e doutorado em
+                        <p>Possui graduação em Tecnologia em Informática pela Universidade Estadual de Campinas
+                            (2003),
+                            mestrado em Engenharia Elétrica pela Universidade Estadual de Campinas (2005) e
+                            doutorado em
                             Engenharia Elétrica pela Universidade Estadual de Campinas (2010). Também possui
                             experiências internacionais, atuando como professor visitante, com bolsa FAPESP, no
                             Massachusetts Institute of Technology (MIT) (Dez/2012-Fev/2013).
@@ -475,6 +518,27 @@
             document.getElementById("menuHamb").classList.toggle("menuClick");
             document.getElementById("nav").classList.toggle("menuLateral");
         }
+
+        function lampada() {
+            // let txts = [
+            //     ...document.querySelectorAll("p"),  
+            //     ...document.querySelectorAll("li")
+            // ]
+
+            // txts.forEach(e => {
+            //     e.style.color = "#FDF5FF"
+            // })
+
+            // let fundoCard = [
+            //     ...document.querySelectorAll(".front"),
+            //     ...document.querySelectorAll(".back")
+            // ]
+
+            // fundoCard.forEach(e => {
+            //     e.style.backgroundColor = "#E7E6E8"
+            // })
+        }
+
     </script>
 
 </body>

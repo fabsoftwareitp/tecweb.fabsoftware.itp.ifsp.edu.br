@@ -6,11 +6,29 @@ body {
     background-color: #ffffff;
 }
 
+#lampada {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    cursor: pointer;
+}
+
+body.modo-escuro p, body.modo-escuro li {
+    color: #FDF5FF
+}
+
 h2 {
     font-family: "Quicksand", sans-serif;
     font-size: 3rem;
     text-align: center;
     margin-top: 100px;
+}
+
+body.modo-escuro h2 {
+    color: white;
 }
 
 .traco {
@@ -107,6 +125,10 @@ header a {
     background-image: url(img/fundo.png);
 }
 
+body.modo-escuro #pgInicial {
+    background-color: #4F3678;
+} 
+
 #pgInicial p {
     background-color: #25163D;
     font-family: "Montserrat", serif;
@@ -120,6 +142,10 @@ header a {
     font-family: "Poppins", serif;
     background-color: #25163D;
     width: 50vw;
+}
+
+body.modo-escuro #pgInicial p, body.modo-escuro #pgInicial h1 {
+    background-color: black;
 }
 
 #containerInicial {
@@ -177,6 +203,10 @@ header a {
     background-color: #F1EFFF;
 }
 
+body.modo-escuro #areas, body.modo-escuro #comoIngressar, body.modo-escuro .bolinha {
+    background-color: #0B0612;
+}
+
 #areas b {
     font-family: "Poppins", serif;
     border-right: #4F3678 0.3rem solid;
@@ -186,7 +216,10 @@ header a {
     display: flex;
     align-items: center;
     color: #0B0612;
-    border: solid red 2px;
+}
+
+body.modo-escuro #areas b {
+    border-right: #9B7FE9 0.3rem solid;
 }
 
 #gbd,
@@ -201,6 +234,11 @@ header a {
 #sistemas {
     border-top: solid 0.3rem #4F3678;
     border-bottom: solid 0.3rem #4F3678;
+}
+
+body.modo-escuro #sistemas {
+    border-top: solid 0.3rem #9B7FE9;
+    border-bottom: solid 0.3rem #9B7FE9;
 }
 
 #areas ul {
@@ -239,13 +277,13 @@ header a {
     width: 26.5vw;
 }
 
-#passosEsquerda p {
+#passosEsquerda p , #passosEsquerda h3 {
     text-align: right;
     margin: 0;
     margin-right: 2.8vw;
 }
 
-#passosDireita p {
+#passosDireita p, #passosDireita h3 {
     text-align: left;
     margin: 0;
     margin-left: 2.8vw;
@@ -319,14 +357,22 @@ header a {
     width: 8.5vw;
     height: 8.5vw;
     border-radius: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 40%;
-    left: 50%;
     border: solid 0.4rem white;
     min-width: 120px;
     min-height: 120px;
     object-fit: cover;
+}
+
+#imgProf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+    width: 90%;
+    height: 70%;
 }
 
 .frontRoxa {
@@ -386,9 +432,6 @@ header a {
 }
 
 .nomeProf {
-    margin-top: 7vw;
-    padding-top: 60px;
-    padding-bottom: 10px;
     font-weight: bold;
     font-size: 1.5rem;
     max-width: 90%;
@@ -493,9 +536,9 @@ footer {
         font-size: 11px;
     }
 
-    .nomeProf {
+    /* .nomeProf {
         padding-top: 50px;
-    }
+    } */
 }
 
 @media (width <=1000px) {
