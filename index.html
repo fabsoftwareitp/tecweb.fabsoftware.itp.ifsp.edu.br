@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="modo-escuro">
+<body>
 
-    <div id="lampada" onclick="lampada()"></div>
+    <div id="lampada"></div>
 
     <section id="pgInicial">
         <header>
@@ -514,29 +514,16 @@
     </footer>
 
     <script>
+        let lampada = document.getElementById('lampada');
+        let body = document.body
+
+        lampada.addEventListener('click', () => {
+            body.classList.toggle('modo-escuro')
+        })
+
         function menu() {
             document.getElementById("menuHamb").classList.toggle("menuClick");
             document.getElementById("nav").classList.toggle("menuLateral");
-        }
-
-        function lampada() {
-            // let txts = [
-            //     ...document.querySelectorAll("p"),  
-            //     ...document.querySelectorAll("li")
-            // ]
-
-            // txts.forEach(e => {
-            //     e.style.color = "#FDF5FF"
-            // })
-
-            // let fundoCard = [
-            //     ...document.querySelectorAll(".front"),
-            //     ...document.querySelectorAll(".back")
-            // ]
-
-            // fundoCard.forEach(e => {
-            //     e.style.backgroundColor = "#E7E6E8"
-            // })
         }
 
     </script>
