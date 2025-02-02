@@ -278,7 +278,12 @@ body.modo-escuro #sistemas {
 
 #ingressar img {
     width: 19vw;
-    /* mix-blend-mode: multiply; */
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1;
+}
+
+body.modo-escuro #ingressar img {
+    opacity: 0;
 }
 
 #passosDireita,
