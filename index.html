@@ -155,7 +155,7 @@
 
         <div id="ingressar">
 
-            <img src="img/logos/if.svg" alt="">
+            <img id="imgIngressar" src="img/logos/if-Claro.svg" alt="">
 
             <div id="containerPassos">
 
@@ -516,9 +516,16 @@
     <script>
         let lampada = document.getElementById('lampada');
         let body = document.body
+        let img = document.getElementById('imgIngressar')
 
         lampada.addEventListener('click', () => {
             body.classList.toggle('modo-escuro')
+
+            if(body.classList.contains('modo-escuro')) {
+                img.src = "img/logos/if-Escuro.svg"
+            } else {
+                img.src = "img/logos/if-Claro.svg"
+            }
         })
 
         function menu() {
