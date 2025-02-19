@@ -14,6 +14,7 @@
     <div id="lampada"></div>
 
     <section id="pgInicial">
+        <canvas id="canvas"></canvas>
         <header>
             <a href="https://itp.ifsp.edu.br/" target="_blank"><img src="img/logos/ifHorizontalBranco.png" alt=""></a>
 
@@ -50,7 +51,7 @@
         </div>
     </section>
 
-    <section id="sobre">
+    <section id="sobre" class="hidden">
         <h2>Sobre</h2>
         <div class="traco"></div>
 
@@ -107,7 +108,7 @@
         </div>
     </section>
 
-    <section id="areas">
+    <section id="areas" class="hidden">
         <h2>Principais Áreas e Disciplinas</h2>
         <div class="traco"></div>
 
@@ -149,7 +150,7 @@
         </div>
     </section>
 
-    <section id="comoIngressar">
+    <section id="comoIngressar" class="hidden">
         <h2>Como Ingressar</h2>
         <div class="traco"></div>
 
@@ -197,7 +198,7 @@
         </div>
     </section>
 
-    <section id="docentes">
+    <section id="docentes" class="hidden">
         <h2>Docentes</h2>
         <div class="traco"></div>
 
@@ -447,7 +448,7 @@
         </div>
     </section>
 
-    <section id="estrutura">
+    <section id="estrutura" class="hidden">
         <h2>Estrutura do Câmpus</h2>
         <div class="traco"></div>
 
@@ -480,7 +481,7 @@
 
     </section>
 
-    <section id="localizacao">
+    <section id="localizacao" class="hidden">
         <h2>Localização do Câmpus</h2>
         <div class="traco"></div>
 
@@ -540,7 +541,27 @@
             document.getElementById("nav").classList.toggle("menuLateral");
         }
 
+        function rolagem() {
+            let secoes = document.querySelectorAll(".hidden");
+            let altura = window.innerHeight;
+
+            secoes.forEach((e) => {
+                let rect = e.getBoundingClientRect();
+
+                if (rect.top < altura * 0.85 && rect.bottom > 0) {
+                    e.classList.add("show");
+                } else {
+                    e.classList.remove("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", rolagem);
+        rolagem();
+
     </script>
+
+    <script src="script.js"></script>
 
 </body>
 
