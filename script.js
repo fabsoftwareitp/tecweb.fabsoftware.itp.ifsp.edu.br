@@ -13,23 +13,31 @@ class Linha {
         this.comprimento = comprimento;
         this.velocidade = velocidade;
         this.direcao = direcao;
-        this.cor = cor;
+        // this.cor = cor;
         this.rastro = [];
         this.rastroMaxComprimento = 50;
     }
+
+    atualizarCor() {
+        if (corpo.classList.contains("modo-escuro")) {
+            this.cor = "#4F3678";
+        } else {
+            this.cor = "#FFFFFF";
+        }
+    }
+    
 
     draw() {
         this.rastro.forEach((pos, index) => {
             const esvanecimento = (1 - index / this.rastro.length) * 0.3;
             ctx.beginPath();
 
-            if (body.classList.contains("modo-escuro")) {
+            if (corpo.classList.contains("modo-escuro")) {
                 ctx.strokeStyle = `rgba(79, 54, 120, ${esvanecimento})`;
             } else {
                 ctx.strokeStyle = `rgba(255, 255, 255, ${esvanecimento})`;
             }
             
-           
             ctx.lineWidth = 1.5;
             if (this.direcao === "horizontal") {
                 ctx.moveTo(pos.x, pos.y);
@@ -99,7 +107,7 @@ function criarLinhaGradualmente() {
         const borda = Math.floor(Math.random() * 4);
         let x, y, direcao;
 
-        if (body.classList.contains("modo-escuro")) {
+        if (corpo.classList.contains("modo-escuro")) {
             cor = "rgba(79, 54, 120, 1)";
         } else {
             cor = "rgba(255, 255, 255, 1)";
@@ -132,7 +140,7 @@ function criarLinhaGradualmente() {
 }
 
 function animate() {
-    if (body.classList.contains("modo-escuro")) {
+    if (corpo.classList.contains("modo-escuro")) {
         ctx.fillStyle = "#000"; 
     } else {
         ctx.fillStyle = "#25163D"; 
@@ -141,6 +149,10 @@ function animate() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     linhas.forEach(linha => linha.update());
     requestAnimationFrame(animate);
+}
+
+function atualizarCores() {
+    linhas.forEach(linha => linha.atualizarCor());
 }
 
 window.addEventListener("resize", () => {

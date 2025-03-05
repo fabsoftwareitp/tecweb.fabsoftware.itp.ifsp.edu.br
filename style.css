@@ -6,10 +6,6 @@ body {
     background-color: #ffffff;
 }
 
-/* body.modo-escuro {
-    background-color: #000;
-} */
-
 #canvas {
     position: absolute;
     top: 0;
@@ -17,7 +13,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; 
-    /* background: #25163D; */
 }
 
 .hidden {
@@ -41,8 +36,10 @@ body.modo-escuro * {
     background-color: red;
     border-radius: 50%;
     position: fixed;
-    top: 50%;
+    bottom: 3%;
+    right: 2%;
     cursor: pointer;
+    z-index: 1;
 }
 
 body.modo-escuro #lampada {
