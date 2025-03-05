@@ -51,7 +51,7 @@
         </div>
     </section>
 
-    <section id="sobre" class="hidden">
+    <section id="sobre" class="secao">
         <h2>Sobre</h2>
         <div class="traco"></div>
 
@@ -108,7 +108,7 @@
         </div>
     </section>
 
-    <section id="areas" class="hidden">
+    <section id="areas" class="secao">
         <h2>Principais Áreas e Disciplinas</h2>
         <div class="traco"></div>
 
@@ -150,7 +150,7 @@
         </div>
     </section>
 
-    <section id="comoIngressar" class="hidden">
+    <section id="comoIngressar" class="secao">
         <h2>Como Ingressar</h2>
         <div class="traco"></div>
 
@@ -198,7 +198,7 @@
         </div>
     </section>
 
-    <section id="docentes" class="hidden">
+    <section id="docentes" class="secao">
         <h2>Docentes</h2>
         <div class="traco"></div>
 
@@ -448,7 +448,7 @@
         </div>
     </section>
 
-    <section id="estrutura" class="hidden">
+    <section id="estrutura" class="secao">
         <h2>Estrutura do Câmpus</h2>
         <div class="traco"></div>
 
@@ -481,7 +481,7 @@
 
     </section>
 
-    <section id="localizacao" class="hidden">
+    <section id="localizacao" class="secao">
         <h2>Localização do Câmpus</h2>
         <div class="traco"></div>
 
@@ -541,14 +541,16 @@
             document.getElementById("nav").classList.toggle("menuLateral");
         }
 
+        document.querySelectorAll(".secao *").forEach((e) => {
+            e.classList.add("hidden");
+        });
+
         function rolagem() {
-            let secoes = document.querySelectorAll(".hidden");
-            let altura = window.innerHeight;
-
-            secoes.forEach((e) => {
+            document.querySelectorAll(".secao *").forEach((e) => {
                 let rect = e.getBoundingClientRect();
+                let altura = window.innerHeight * 1;
 
-                if (rect.top < altura * 0.85 && rect.bottom > 0) {
+                if (rect.top < altura && rect.bottom > 0) {
                     e.classList.add("show");
                 } else {
                     e.classList.remove("show");
