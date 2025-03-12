@@ -1,13 +1,758 @@
-/* ---- particles.js container ---- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #2C2C54;
-  color: red;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.modo-escuro * {
+    transition: 0.5s;
+}
+
+#lampada {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 3%;
+    right: 2%;
+    cursor: pointer;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#lampada > i{
+    color: white;
+}
+
+body.modo-escuro #lampada {
+    background-color: white;
+}
+
+body.modo-escuro #lampada > i {
+    color: black;
+}
+
+body.modo-escuro p, body.modo-escuro li {
+    color: #FDF5FF;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 5vw;
+    max-width: 90vw;
+}
+
+body.modo-escuro h2 {
+    color: white;
+}
+
+.traco {
+    background-color: #9B7FE9;
+    width: 8.5vw;
+    height: 0.4rem;
+    margin-bottom: 5vw;
+}
+
+#tracoInicial {
+    width: 100px;
+    height: 10px;
+    background-color: #9B7FE9;
+    margin-bottom: 25px;
+}
+
+header {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0b06127a;
+}
+
+#menu ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: white;
+    display: none;
+    transform: rotateZ(0deg);
+    transition: 0.5s;
+}
+
+#menuHamb {
+    margin-right: 15px;
+    height: 25px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: 0.5s;
+    z-index: 5;
+}
+
+.menuClick #bar1 {
+    transform: translateY(8px) rotateZ(-135deg);
+    transition: 0.5s;
+}
+
+.menuClick #bar2 {
+    opacity: 0;
+}
+
+.menuClick #bar3 {
+    transform: translateY(-9px) rotateZ(135deg);
+    transition: 0.5s;
+}
+
+header img {
+    width: 10vw;
+    min-width: 110px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat", serif;
+    font-size: 1.4rem;
+    padding: 1.8vw;
+}
+
+#pgInicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    height: 100vh;
+    /* background-image: url(img/fundo.png); */
+}
+
+#pgInicial p {
+    background-color: #25163D;
+    font-family: "Montserrat", serif;
+    width: 50vw;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+#pgInicial h1 {
+    font-size: 4rem;
+    font-family: "Poppins", serif;
+    background-color: #25163D;
+    width: 50vw;
+}
+
+body.modo-escuro #pgInicial p, body.modo-escuro #pgInicial h1 {
+    background-color: black;
+}
+
+#containerInicial {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    color: #0B0612;
+}
+
+#containerSobre {
+    display: flex;
+    font-size: 2rem;
+    font-family: "Montserrat", serif;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    justify-content: space-evenly;
+}
+
+.sobre {
+    padding: 4vw;
+    width: 14vw;
+    width: 20%;
+    min-width: 180px;
+}
+
+.sobre b {
+    font-family: "Poppins", serif;
+}
+
+.sobre p {
+    margin: 0;
+}
+
+.sobre img {
+    width: 4.8vw;
+    min-width: 28%;
+}
+
+#areas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Montserrat", serif;
+    padding-bottom: 100px;
+    background-color: #F1EFFF;
+}
+
+body.modo-escuro #docentes, body.modo-escuro #areas, body.modo-escuro #comoIngressar, body.modo-escuro .bolinha, body.modo-escuro footer {
+    background-color: #0d0814;
+}
+
+body.modo-escuro #sobre, body.modo-escuro #estrutura, body.modo-escuro #localizacao {
+    background-color: #25163D;
+}
+
+#areas b {
+    font-family: "Poppins", serif;
+    border-right: #4F3678 0.3rem solid;
+    width: 25%;
+    min-width: 205px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: #0B0612;
+}
+
+body.modo-escuro #areas b {
+    border-right: #9B7FE9 0.3rem solid;
+}
+
+#gbd,
+#devWeb,
+#sistemas {
+    display: flex;
+    font-size: 2rem;
+    justify-content: flex-start;
+    width: auto;
+}
+
+#sistemas {
+    border-top: solid 0.3rem #4F3678;
+    border-bottom: solid 0.3rem #4F3678;
+}
+
+body.modo-escuro #sistemas {
+    border-top: solid 0.3rem #9B7FE9;
+    border-bottom: solid 0.3rem #9B7FE9;
+}
+
+#areas ul {
+    list-style: none;
+}
+
+#tblAreas {
+    line-height: 2.8rem;
+}
+
+#comoIngressar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F1EFFF;
+}
+
+#ingressar {
+    display: flex;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+#ingressar img {
+    width: 19vw;
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 1;
+}
+
+body.modo-escuro #ingressar img {
+    opacity: 0;
+}
+
+#passosDireita,
+#passosEsquerda {
+    display: flex;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
+    line-height: 2.8rem;
+    font-size: 2rem;
+    color: #0B0612;
+    width: 26.5vw;
+}
+
+#passosEsquerda p , #passosEsquerda h3 {
+    text-align: right;
+    margin: 0;
+    margin-right: 2.8vw;
+}
+
+#passosDireita p, #passosDireita h3 {
+    text-align: left;
+    margin: 0;
+    margin-left: 2.8vw;
+}
+
+#passosEsquerda {
+    padding-top: 10px;
+}
+
+.passos,
+#p {
+    font-family: "Montserrat", sans-serif;
+    color: #4F3678;
+    font-weight: bold;
+    font-size: 2.3rem;
+}
+
+#passosDireita .passos,
+#resul {
+    padding-top: 15.6rem;
+}
+
+.bolinha {
+    width: 1.8vw;
+    height: 1.8vw;
+    min-width: 15px;
+    min-height: 15px;
+    border: 3px solid #4F3678;
+    border-radius: 50%;
+    background-color: #F1EFFF;
+}
+
+.bolinha:hover {
+    transition: 0.3s;
+    background-color: #4F3678;
+}
+
+#bolinhas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 3px;
+    background-color: #4F3678;
+    align-items: center;
+}
+
+#containerPassos {
+    display: flex;
+    margin-left: 20vw;
+}
+
+#docentes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.card {
+    width: 22vw;
+    height: 20vw;
+    min-width: 280px;
+    min-height: 250px;
+    perspective: 2000px;
+    border-radius: 1vw;
+    margin: 1px;
+    margin-bottom: 3.5vw;
+}
+
+.card img {
+    width: 8.5vw;
+    height: 8.5vw;
+    border-radius: 50%;
+    border: solid 0.4rem white;
+    min-width: 120px;
+    min-height: 120px;
+    object-fit: cover;
+}
+
+#imgProf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+    width: 90%;
+    height: 70%;
+}
+
+.frontRoxa {
+    background-color: #4F3678;
+    width: 100%;
+    height: 48%;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 2, 0.452);
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    border-radius: 1vw;
+}
+
+.card:hover .content {
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+}
+
+.front,
+.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    text-align: center;
+    backface-visibility: hidden;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.modo-escuro .front,
+body.modo-escuro .back {
+    background-color: #E7E6E8;
+}
+
+body.modo-escuro .frontRoxa {
+    background-color: #25163D;
+}
+
+body.modo-escuro #docentes p{
+    color: #0B0612;
+}
+
+.back {
+    transform: rotateY(180deg);
+    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front p {
+    margin: 0;
+    font-family: "Montserrat", serif;
+}
+
+.back p {
+    font-family: "Montserrat", serif;
+    width: 90%;
+    text-align: justify;
+}
+
+.nomeProf {
+    font-weight: bold;
+    font-size: 1.5rem;
+    max-width: 90%;
+}
+
+#profs {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    width: 80vw;
+}
+
+#estrutura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgCampus img {
+    /* width: 634px; */
+    width: 31vw;
+    /* height: 500px; */
+    height: 20vw;
+    margin: 0.75vw;
+    min-width: 350px;
+    min-height: 250px;
+    object-fit: cover;
+    box-shadow: 0px 0px 5px rgba(0, 0, 2, 0.452);
+}
+
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+}
+
+#localizacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    width: 98.5vw;
+    height: 22vw;
+    min-height: 200px;
+}
+
+footer {
+    background-color: #25163D;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+    font-family: "Montserrat", serif;
+    font-weight: bold;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+
+#endereco {
+    text-align: center;
+    width: 30%;
+    /* width: 280px; */
+    font-size: 1.3rem;
+    padding: 4vw;
+}
+
+#endereco img {
+    width: 12vw;
+    min-width: 150px;
+}
+
+#contato,
+#fabrica {
+    text-align: center;
+    width: 20vw;
+    font-size: 1.3rem;
+    min-width: 150px;
+    /* padding: 4vw; */
+}
+
+#fabrica img {
+    width: 12vw;
+    min-width: 150px;
+}
+
+#contato img {
+    width: 2.5vw;
+    min-width: 25px;
+}
+
+.enem,
+.resul {
+    display: none;
+}
+
+@media (width <=1700px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (width <=1000px) {
+    #pgInicial p,
+    #pgInicial h1 {
+        width: 60vw;
+    }
+
+    #areas b {
+        width: 22vw;
+    }
+
+    #gbd,
+    #devWeb,
+    #sistemas {
+        width: 70vw;
+    }
+}
+
+@media (width <=750px) {
+
+    #containerInicial {
+        width: 90vw;
+    }
+
+    #pgInicial p,
+    #pgInicial h1 {
+        width: 80vw;
+    }
+
+    #gbd,
+    #devWeb,
+    #sistemas {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        border: none;
+    }
+
+    #areas b {
+        border: none;
+        border-bottom: solid 0.3rem #4F3678;
+        width: auto;
+    }
+
+    body.modo-escuro #areas b {
+        border: none;
+        width: auto;
+        border-bottom: #9B7FE9 0.3rem solid;
+    }
+
+    body.modo-escuro #sistemas {
+        border: none;
+    }
+
+    #areas ul {
+        padding-left: 0;
+    }
+
+    #comoIngressar img {
+        display: none;
+    }
+
+    #containerPassos {
+        justify-content: space-around;
+        margin: 0;
+    }
+
+    #ingressar {
+        justify-content: center;
+    }
+
+    #passosDireita {
+        width: 45vw;
+    }
+
+    #passosEsquerda {
+        display: none;
+    }
+
+    #passosDireita {
+        width: 70vw;
+        margin-left: 15px;
+    }
+    
+    #passosDireita .passos {
+        padding-top: 0rem;
+    }
+
+    .resul, .enem {
+        display: block;
+    }
+
+    #p, #passosDireita .passos  {
+        padding-top: 5rem;
+    }
+
+}
+
+@media (width <=650px) {
+    html {
+        font-size: 9px;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    .menuLateral{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0vw;
+        height: 100vh;
+        background-color: #0b0612f8;
+    }
+
+    .menuLateral ul {
+        flex-direction: column-reverse;
+        padding: 0;
+        margin-top: 60px;
+    }
+
+    .menuLateral a {
+        font-size: 2rem;
+        padding: 30px;
+    }
+
+    .menuLateral li {
+        margin: 25px;
+    }
+
+    #endereco {
+        width: inherit;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+}
+
+@media (width <= 400px) {
+    #tracoInicial {
+        height: 5px;
+    }
+
+    #pgInicial h1 {
+        font-size: 3.5rem;
+    }
+
+    #pgInicial p {
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+    }
 }

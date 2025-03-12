@@ -1,711 +1,541 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecWeb</title>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="assets/favicon/site.webmanifest" />
-
-  <title>Especialização Web</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
-
-  <link rel="stylesheet" href="assets/css/Brands.css">
-  <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-  <link rel='stylesheet' href="assets/css/rotating-card.css">
-  <link rel="stylesheet" href="assets/css/untitled.css">
-
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./style1.css">
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-60S8ECGG06"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-60S8ECGG06');
-  </script>
-  
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body id="page-top">
-  <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-    <div class="container">
-      <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-align-justify"></i></button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <a class="nav-link js-scroll-trigger" href="#page-top">
-          <!-- O codigo da imagem mudando de cor esta no creative.js -->
-          <img id="logo" class="img-fluid mr-auto img-inv" width="250px" height="250px" src="assets/img/logo-if.png" alt="logo_if"></a>
-        <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#docentes">DOCENTES</a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#disciplinas">ÁREAS</a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#sobre">SOBRE</a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#local">ESTRUTURA E LOCALIZAÇÃO</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <header class="masthead text-center text-white d-flex">
+<body>
 
-    <div id="particles-js"></div>
+    <div id="lampada"><i class="large material-icons">wb_incandescent</i></div>
 
+    <section id="pgInicial">
+        <canvas id="canvas"></canvas>
+        <header>
+            <a href="https://itp.ifsp.edu.br/" target="_blank"><img src="img/logos/ifHorizontalBranco.png" alt=""></a>
 
-    <div class="container my-auto" id="mainHeader" data-aos="fade" data-aos-once="true">
-      <div class="row">
-        <div id="especial-text" class="col-lg-10 mx-auto typewriter">
-          <h1 class="text-uppercase "><strong>Tecnologia em sistemas</strong></h1>
-          <h1 class="text-uppercase "><strong>Para internet</strong></h1>
-          <hr>
+            <div id="menu">
+
+                <div id="menuHamb" onclick="menu()">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                </div>
+
+                <div id="nav" class="nav">
+                    <b>
+                        <ul>
+                            <li><a href="#sobre">Sobre</a></li>
+                            <li><a href="#areas">Disciplinas</a></li>
+                            <li><a href="#comoIngressar">Como Ingressar</a></li>
+                            <li><a href="#docentes">Docentes</a></li>
+                            <li><a href="#estrutura">Estrutura</a></li>
+                        </ul>
+                    </b>
+                </div>
+            </div>
+        </header>
+        <div id="containerInicial">
+            <h1>TECNOLOGIA EM SISTEMAS PARA INTERNET</h1>
+            <div id="tracoInicial"></div>
+            <p>O <b>Curso Superior de Tecnologia em Sistemas para Internet</b> tem por objetivo geral propiciar ao
+                estudante um processo formativo que o habilite desenvolver e empregar os conhecimentos científicos e
+                tecnológicos voltados para as atividades de desenvolvimento, teste, atualização e manutenção de sistemas
+                para Internet e dispositivos móveis, tornando-o capaz de posicionar-se de maneira crítica no mercado e
+                intervir no desenvolvimento econômico e social da sua região, além de contribuir em sua formação como
+                cidadão.</p>
         </div>
-      </div>
-      <div class="col-lg-8 mx-auto">
-        <p class="text-center text-white mb-5 font-weight-bold">O Curso Superior de Tecnologia em Sistemas para Internet tem por
-          objetivo geral propiciar ao estudante um processo formativo que o habilite
-          desenvolver e empregar os conhecimentos científicos e tecnológicos voltados
-          para as atividades de desenvolvimento, teste, atualização e manutenção de
-          sistemas para Internet e dispositivos móveis, tornando-o capaz de posicionar-se
-          de maneira crítica no mercado e intervir no desenvolvimento econômico e
-          social da sua região, além de contribuir em sua formação como cidadão.</p>
-        <a class="circle transpa js-scroll-trigger setaaa" role="button" href="#docentes" >
-          <span class="seta-baixo"><img class="img-circle setabaixo" src="assets/img/setabaixo.png"/></span></a>
-      </div>
-    </div>
-  </header>
+    </section>
 
+    <section id="sobre" class="secao">
+        <h2>Sobre</h2>
+        <div class="traco"></div>
 
-  <section id="docentes" class="bg-primary">
-    <div id="particles"></div>
-    <!-- Section: Team v.4 -->
-    <section class="my-5">
-      <div class="container">
-        <div class="col-lg-10 m-auto text-center">
-          <h1 class="text-uppercase "><strong>Docentes</strong></h1>
-          <hr id="hrbranco">
+        <div id="containerSobre">
+
+            <div class="sobre">
+                <img src="img/icones/schedule.png" alt="">
+                <b>
+                    <p>Dias e Horários</p>
+                </b>
+                <p>Segunda á sexta-feira - Período noturno</p>
+            </div>
+
+            <div class="sobre">
+                <img src="img/icones/calendar.png" alt="">
+                <b>
+                    <p>Duração do Curso</p>
+                </b>
+                <p>36 Meses</p>
+            </div>
+
+            <div class="sobre">
+                <img src="img/icones/flag.png" alt="">
+                <b>
+                    <p>Previsão do início das aulas</p>
+                </b>
+                <p>1º Semestre - 2025</p>
+            </div>
+
+            <div class="sobre">
+                <img src="img/icones/groups.png" alt="">
+                <b>
+                    <p>Vagas</p>
+                </b>
+                <p>40 Vagas</p>
+            </div>
+
+            <div class="sobre">
+                <img src="img/icones/location.png" alt="">
+                <b>
+                    <p>Localização</p>
+                </b>
+                <p>Campus Itapetininga</p>
+            </div>
+
+            <div class="sobre">
+                <img src="img/icones/savings.png" alt="">
+                <b>
+                    <p>Custo</p>
+                </b>
+                <p>Curso gratuito</p>
+            </div>
+
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-           <div class="card-container ">
+    </section>
+
+    <section id="areas" class="secao">
+        <h2>Principais Áreas e Disciplinas</h2>
+        <div class="traco"></div>
+
+        <div id="tblAreas">
+            <div id="devWeb">
+                <b>
+                    <p>Desenvolvimento Web</p>
+                </b>
+                <ul>
+                    <li>Programação para Web I, II, III e IV</li>
+                    <li>Desenvolvimento para dispositivos móveis</li>
+                    <li>Desenvolvimento de Projetos de Web</li>
+                </ul>
+            </div>
+
+            <div id="sistemas">
+                <b>
+                    <p>Infraestrutura e Sistemas para Internet</p>
+                </b>
+                <ul>
+                    <li>Arquitetura de Computadores</li>
+                    <li>Sistemas Operacionais</li>
+                    <li>Administração e Segurança de Redes</li>
+                </ul>
+            </div>
+
+            <div id="gbd">
+                <b>
+                    <p>Programação e Banco de Dados</p>
+                </b>
+
+                <ul>
+                    <li>Lógica de Programação</li>
+                    <li>Engenharia de Software</li>
+                    <li>Programação Orientada a Objetos</li>
+                    <li>Banco de Dados I e II</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="comoIngressar" class="secao">
+        <h2>Como Ingressar</h2>
+        <div class="traco"></div>
+
+        <div id="ingressar">
+
+            <img id="imgIngressar" src="img/logos/if-Claro.svg" alt="">
+
+            <div id="containerPassos">
+
+                <div id="passosEsquerda">
+
+                    <h3 class="passos">Faça o ENEM</h3>
+                    <p>Participe da ultima edicao do ENEM. Sua nota no ENEM sera usada para o processo seletivo.</p>
+
+                    <h3 class="passos" id="resul">Resultado</h3>
+                    <p>Após o fechamento das inscrições, vocé deve acessar o site do Sisu para verificar se foi aprovado
+                        para o curso desejado.</p>
+                </div>
+
+                <div id="bolinhas">
+                    <div class="bolinha"></div>
+                    <div class="bolinha"></div>
+                    <div class="bolinha"></div>
+                    <div class="bolinha"></div>
+                </div>
+
+                <div id="passosDireita">
+                    <h3 id="p" class="enem">Faça o ENEM</h3>
+                    <p class="enem">Participe da ultima edicao do ENEM. Sua nota no ENEM sera usada para o processo
+                        seletivo.</p>
+
+                    <h3 class="passos">Inscrição no SISU</h3>
+                    <p>Selecione o curso "Tecnologia em Sistemas para Internet" no IFSP - Campus Itapetininga.</p>
+
+                    <h3 id="p" class="resul" id="resultado">Resultado</h3>
+                    <p class="resul">Após o fechamento das inscrições, vocé deve acessar o site do Sisu para verificar
+                        se foi aprovado
+                        para o curso desejado.</p>
+
+                    <h3 class="passos">Matricula</h3>
+                    <p>Caso seja selecionado, vocé precisará realizar a matrícula conforme as orientações do câmpus.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="docentes" class="secao">
+        <h2>Docentes</h2>
+        <div class="traco"></div>
+
+        <div id="profs">
+
             <div class="card">
-              <div class="front">
-                <div class="cover" style="background-color:#2C2C54;">
-                </div>
-                <div class="user borda-img">
-                  <img class="img-circle img-redondo" src="assets/img/docentes/gerson.jpg"/>
-                </div>
                 <div class="content">
-                  <div class="main">
-                    <h3 class="name">Gerson Nunho Carriel</h3>
-                    <p class="profession">Professor</p>
-                    <p class="text-center"></p>
-                  </div>
-                  <div class="footer">
-                    <i class="fa fa-mail-forward"></i>
-                  </div>
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4592760T3"
+                                alt="">
+                            <p class="nomeProf">Gerson Nunho Carriel</p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Doutorando em Processos Tecnológicos pela Universidade de Sorocaba, possui graduação em
+                            Análise de Sistemas pela Universidade de Sorocaba (1999) e mestrado em Ciência da Computação
+                            pela Universidade Metodista de Piracicaba (2008).</p>
+                    </div>
                 </div>
-              </div> <!-- end front panel -->
-              <div class="back">
-                <div class="header">
-                  <h5 class="motto"> Gerson Nunho Carriel</h5>
-                </div>
+            </div>
+
+            <div class="card">
                 <div class="content">
-                  <p  class="text-justify pa" >Doutorando em Processos Tecnológicos pela Universidade de Sorocaba, possui graduação em Análise de Sistemas pela Universidade de Sorocaba (1999) e mestrado em Ciência da Computação pela Universidade Metodista de Piracicaba (2008). Atualmente Professor em regime de dedicação exclusiva do IFSP(Instituto Federal de Ciência e Tecnologia ) de Itapetininga. </p>
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K8491521J2"
+                                alt="">
+                            <p class="nomeProf">Anderson Bernardo de Almeida</p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela Faculdade de
+                            Tecnologia de Itapetininga e Licenciatura em Matemática pela Associação de Ensino de
+                            Itapetininga.</p>
+                    </div>
                 </div>
-                <div class="footer">
-                  <div class="social-links text-center">
-                    <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-                    <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-                  </div>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4315280D6"
+                                alt="">
+                            <p class="nomeProf">Flavio Mania</p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em Ciência da Computação pela Universidade Paulista (2001).</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-       <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-         <div class="card-container">
-          <div class="card">
-            <div class="front">
-              <div class="cover" style="background-color:#2C2C54;">
-              </div>
-              <div class="user borda-img">
-                <img class="img-circle img-redondo" src="assets/img/docentes/anderson.jpg"/>
-              </div>
-              <div class="content">
-                <div class="main">
-                  <h3 class="name">Anderson Bernardo de Almeida</h3>
-                  <p class="profession">Professor</p>
-                  <p class="text-center"></p>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4325297A1"
+                                alt="">
+                            <p class="nomeProf">Wilton Moreira Júnior</p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em pela Associação de Ensino de Itapetininga (2006), Especialização em
+                            Tecnologia e Desenvolvimento de Sistemas pelo Senac Sorocaba, mestrado em Ciência da
+                            Computação pela Universidade Federal de São Carlos (2015).</p>
+                    </div>
                 </div>
-                <div class="footer">
-                  <i class="fa fa-mail-forward"></i>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4306412E3"
+                                alt="">
+                            <p class="nomeProf">Eline Faliane Welter</p>
+                            <p>Professora</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em Sistemas de Informação pela Faculdade de Ciências Contábeis de
+                            Itapetininga e mestrado em Ciência da Computação pela UFSCar Sorocaba.</p>
+                    </div>
                 </div>
-              </div>
-            </div> <!-- end front panel -->
-            <div class="back">
-              <div class="header">
-                <h5 class="motto">Anderson Bernardo de Almeida</h5>
-              </div>
-              <div class="content">
-                <p  class="text-justify pa" >Possui graduação em Tecnologia em Análise e Desenvolvimento de Sistemas pela Faculdade de Tecnologia de Itapetininga e Licenciatura em Matemática pela Associação de Ensino de Itapetininga. Atualmente é Professor de Ensino Básico, Técnico e Tecnológico do Instituto Federal de São Paulo, campus Itapetininga-SP, atuando em disciplinas da área de Programação de Computadores e Banco de Dados. </p>
-              </div>
-              <div class="footer">
-                <div class="social-links text-center">
-                  <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-                  <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
+            </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4056502J6"
+                                alt="">
+                            <p class="nomeProf">Rafael de Almeida Brochado</p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Mestre em Tecnologia pela UNICAMP, na área de Sistemas de Informação e Comunicação (2021). Possui especialização em Informática Aplicada à Educação pelo Instituto Federal de São Paulo (2017) e em Gestão de Ensino a Distância pela Universidade Federal Fluminense (2013), graduação em Informática para Gestão de Negócios - Fatec Itapetininga (2012).</p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-        <div class="card-container">
-         <div class="card">
-           <div class="front">
-             <div class="cover" style="background-color:#2C2C54;">
-             </div>
-             <div class="user borda-img">
-               <img class="img-circle img-redondo" src="assets/img/docentes/flavio.jpg"/>
-             </div>
-             <div class="content">
-               <div class="main">
-                 <h3 class="name">Flavio Mania</h3>
-                 <p class="profession">Professor</p>
-                 <p class="text-center"></p>
-               </div>
-               <div class="footer">
-                 <i class="fa fa-mail-forward"></i>
-               </div>
-             </div>
-           </div> <!-- end front panel -->
-           <div class="back">
-             <div class="header">
-               <h5 class="motto">Flavio Mania</h5>
-             </div>
-             <div class="content">
-               <p class="text-justify pa">Possui graduação em Ciência da Computação pela Universidade Paulista (2001). Atualmente é prof do ensino básico e tecnológico do Instituto Federal de São Paulo em Itapetininga e no curso de Graduação em Ciência da computação no IIES de Itapetininga. Tem experiência na área de Ciência da Computação, com ênfase em Ciência da Computação. </p>
-             </div>
-             <div class="footer">
-               <div class="social-links text-center">
-                 <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-                 <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
 
-     <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-       <div class="card-container">
-        <div class="card">
-          <div class="front">
-            <div class="cover" style="background-color:#2C2C54;">
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4206858U8"
+                                alt="">
+                            <p class="nomeProf">Ramiro Tadeu Wisnieski</p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em Análise e desenvolvimento de Sistemas pelo Instituto Federal de Educação,
+                            Ciência e Tecnologia de São Paulo (IFSP). -Especialista em Educação à Distância (FTC).</p>
+                    </div>
+                </div>
             </div>
-            <div class="user borda-img">
-              <img class="img-circle img-redondo" src="assets/img/docentes/wilton.jpg"/>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4292427H7"
+                                alt="">
+                            <p class="nomeProf">Renato Franchi Lopes dos Santos
+                            </p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Especialista em Gestão Pública. Mestre em Ciências da Educação pela Universidad Americana. Doutorando em
+                            Ciências da Educação pela Universidad Nacional de Rosário.</p>
+                    </div>
+                </div>
             </div>
-            <div class="content">
-              <div class="main">
-                <h3 class="name">Wilton Moreira Júnior</h3>
-                <p class="profession">Professor</p>
-                <p class="text-center"></p>
-              </div>
-              <div class="footer">
-                <i class="fa fa-mail-forward"></i>
-              </div>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4346010A2"
+                                alt="">
+                            <p class="nomeProf">Robson João Gregório Rodrigues
+                            </p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui Mestrado em Tecnologia - FT Unicamp, Especialização em Engenharia de Sistemas - ESAB,graduação em TECNOLOGIA DA INFORMATICA - Fatec Indústria de Nutrição e Saúde Animal
+                            (2011).</p>
+                    </div>
+                </div>
             </div>
-          </div> <!-- end front panel -->
-          <div class="back">
-            <div class="header">
-              <h5 class="motto">Wilton Moreira Junior</h5>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf">
+                            <img src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4456721T7"
+                                alt="">
+                            <p class="nomeProf">Danilo Camargo Bueno
+                            </p>
+                            <p>Professor</p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em Bacharelado em Informática pela Universidade Estadual de Maringá
+                            (2014) e
+                            mestrado em Ciência da Computação pela Universidade Federal de São Carlos (2017).
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="content">
-              <p class="text-justify pa" >Possui graduação em pela Associação de Ensino de Itapetininga (2006), Especialização em Tecnologia e Desenvolvimento de Sistemas pelo Senac Sorocaba, mestrado em Ciência da Computação pela Universidade Federal de São Carlos (2015). Tem experiência na área de Robótica, Mecatrônica e Automação, com ênfase em Informática, atuando principalmente nos seguintes temas: desenvolvimento, jogo, tecnologia, educação e jogos.  </p>
+
+            <div class="card">
+                <div class="content">
+                    <div class="front">
+                        <div class="frontRoxa"></div>
+                        <div id="imgProf"><img
+                                src="http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4774136Y3"
+                                alt="">
+                            <p class="nomeProf">Carlos Henrique da Silva Santos
+                            </p>
+                            <p>Professora</p>
+                        </div>
+
+                    </div>
+                    <div class="back">
+                        <p>Possui graduação em Tecnologia em Informática pela Universidade Estadual de Campinas
+                            (2003),
+                            mestrado em Engenharia Elétrica pela Universidade Estadual de Campinas (2005) e
+                            doutorado em
+                            Engenharia Elétrica pela Universidade Estadual de Campinas (2010).
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="footer">
-              <div class="social-links text-center">
-                <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-                <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-              </div>
+        </div>
+    </section>
+
+    <section id="estrutura" class="secao">
+        <h2>Estrutura do Câmpus</h2>
+        <div class="traco"></div>
+
+        <div id="galeria">
+            <div class="imgCampus">
+                <img src="img/estrutura/auditorioInfo.jpeg" alt="">
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-      <div class="card-container">
-       <div class="card">
-         <div class="front">
-           <div class="cover" style="background-color:#2C2C54;">
-           </div>
-           <div class="user borda-img">
-             <img class="img-circle img-redondo" src="assets/img/docentes/eline.jpg"/>
-           </div>
-           <div class="content">
-             <div class="main">
-               <h3 class="name">Eline Faliane Welter</h3>
-               <p class="profession">Professora</p>
-               <p class="text-center"></p>
-             </div>
-             <div class="footer">
-               <i class="fa fa-mail-forward"></i>
-             </div>
-           </div>
-         </div> <!-- end front panel -->
-         <div class="back">
-           <div class="header">
-             <h5 class="motto">Eline Faliane Welter</h5>
-           </div>
-           <div class="content">
-             <p  class="text-justify pa" >
-             Possui graduação em Sistemas de Informação pela Faculdade de Ciências Contábeis de Itapetininga e mestrado em Ciência da Computação pela UFSCar Sorocaba. Atualmente é professora de ensino básico, técnico e tecnológico do Instituto Federal de São Paulo - Campus Itapetininga.atua principalmente nos seguintes temas: desenvolvimento para dispositivos móveis, usabilidade, acessibilidade, objeto de aprendizagem e e-learning.  </p>
-           </div>
-           <div class="footer">
-             <div class="social-links text-center">
-               <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-               <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-
-   <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-     <div class="card-container">
-      <div class="card">
-        <div class="front">
-          <div class="cover" style="background-color:#2C2C54;">
-          </div>
-          <div class="user borda-img">
-            <img class="img-circle img-redondo" src="assets/img/docentes/rafaelalmeida.jpg"/>
-          </div>
-          <div class="content">
-            <div class="main">
-              <h3 class="name">Rafael de Almeida Brochado</h3>
-              <p class="profession">Professor</p>
-              <p class="text-center"></p>
+            <div class="imgCampus">
+                <img src="img/estrutura/biblioteca.png" alt="">
             </div>
-            <div class="footer">
-              <i class="fa fa-mail-forward"></i>
+
+            <div class="imgCampus">
+                <img src="img/estrutura/hardware.jpg" alt="">
+
             </div>
-          </div>
-        </div> <!-- end front panel -->
-        <div class="back">
-          <div class="header">
-            <h5 class="motto">Rafael de Almeida Brochado</h5>
-          </div>
-          <div class="content">
-            <p  class="text-justify pa" >Possui especialização em Gestão de Ensino a Distância pela Universidade Federal Fluminense (2013), graduação em Informática para Gestão de Negócios - Fatec Itapetininga (2012) e graduação em Letras . Atuou como Técnico de informática do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus Itapetininga e também como Coordenador de Tecnologia da Informação da unidade.</p>
-          </div>
-          <div class="footer">
-            <div class="social-links text-center">
-              <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-              <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
+
+            <div class="imgCampus">
+                <img src="img/estrutura/labA.jpg" alt="">
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-    <div class="card-container">
-     <div class="card">
-       <div class="front">
-         <div class="cover" style="background-color:#2C2C54;">
-         </div>
-         <div class="user borda-img">
-           <img class="img-circle img-redondo" src="assets/img/docentes/ramiro.jpg"/>
-         </div>
-         <div class="content">
-           <div class="main">
-             <h3 class="name">Ramiro Tadeu Wisnieski</h3>
-             <p class="profession">Professor</p>
-             <p class="text-center"></p>
-           </div>
-           <div class="footer">
-             <i class="fa fa-mail-forward"></i>
-           </div>
-         </div>
-       </div> <!-- end front panel -->
-       <div class="back">
-         <div class="header">
-           <h5 class="motto">Ramiro Tadeu Wisnieski</h5>
-         </div>
-         <div class="content">
-           <p  class="text-justify pa" >Possui graduação em Análise e desenvolvimento de Sistemas pelo Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP). -Especialista em Educação à Distância (FTC). Participou da disciplina de doutorado aluno especial na Unicamp Educação(Disciplina Análise e Desenvolvimento de Jogos Eletrônicos) e para o curso de Licenciatura em Física.  </p>
-         </div>
-         <div class="footer">
-           <div class="social-links text-center">
-             <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-             <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
+            <div class="imgCampus">
+                <img src="img/estrutura/livros.png" alt="">
+            </div>
 
- <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-   <div class="card-container">
-    <div class="card">
-      <div class="front">
-        <div class="cover" style="background-color:#2C2C54;">
+            <div class="imgCampus">
+                <img src="img/estrutura/labC.jpg" alt="">
+            </div>
         </div>
-        <div class="user borda-img">
-          <img class="img-circle img-redondo" src="assets/img/docentes/rento.jpg"/>
-        </div>
-        <div class="content">
-          <div class="main">
-            <h3 class="name">Renato Franchi Lopes dos Santos</h3>
-            <p class="profession">Professor</p>
-            <p class="text-center"></p>
-          </div>
-          <div class="footer">
-            <i class="fa fa-mail-forward"></i>
-          </div>
-        </div>
-      </div> <!-- end front panel -->
-      <div class="back">
-        <div class="header">
-          <h5 class="motto">Renato Franchi Lopes dos Santos</h5>
-        </div>
-        <div class="content">
-          <p  class="text-justify pa" >Atualmente é professor do curso técnico em informática integrado ao Ensino Médio do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo campus Itapetininga. Tem experiência na área de Ciência da Computação, com ênfase em Sistemas de Informação. Especialista em Gestão Pública. Mestre em Ciências da Educação pela Universidad Americana. Doutorando em Ciências da Educação pela Universidad Nacional de Rosário.</p>
-        </div>
-        <div class="footer">
-          <div class="social-links text-center">
-            <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-            <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-  <div class="card-container">
-   <div class="card">
-     <div class="front">
-       <div class="cover" style="background-color:#2C2C54;">
-       </div>
-       <div class="user borda-img">
-         <img class="img-circle img-redondo" src="assets/img/docentes/robson.jpg"/>
-       </div>
-       <div class="content">
-         <div class="main">
-           <h3 class="name">Robson João Gregório Rodrigues</h3>
-           <p class="profession">Professor</p>
-           <p class="text-center"></p>
-         </div>
-         <div class="footer">
-           <i class="fa fa-mail-forward"></i>
-         </div>
-       </div>
-     </div> <!-- end front panel -->
-     <div class="back">
-       <div class="header">
-         <h5 class="motto">Robson João Gregório Rodrigues</h5>
-       </div>
-       <div class="content">
-         <p  class="text-justify pa" >Possui Mestrado em Tecnologia - FT Unicamp, Especialização em Engenharia de Sistemas - ESAB, graduação em TECNOLOGIA DA INFORMATICA - Fatec Indústria de Nutrição e Saúde Animal (2011). Atuou como Técnico de informática do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Câmpus Itapetininga. Atualmente é Professor EBTT, de Programação e Banco de Dados, no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus de Itapetininga. Tem experiência na área de Ciência da Computação, com ênfase em Programação e Banco de Dados</p>
-       </div>
-       <div class="footer">
-         <div class="social-links text-center">
-           <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-           <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
+    </section>
 
-<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
- <div class="card-container">
-  <div class="card">
-    <div class="front">
-      <div class="cover" style="background-color:#2C2C54;">
-      </div>
-      <div class="user borda-img">
-        <img class="img-circle img-redondo" src="assets/img/docentes/danilo.jpg"/>
-      </div>
-      <div class="content">
-        <div class="main">
-          <h3 class="name">Danilo Camargo Bueno</h3>
-          <p class="profession">Professor</p>
-          <p class="text-center"></p>
+    <section id="localizacao" class="secao">
+        <h2>Localização do Câmpus</h2>
+        <div class="traco"></div>
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.293284371015!2d-48.02112402542053!3d-23.593812462783816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5cbf41ebfcf31%3A0xa65e4fb6d75446bf!2sInstituto%20Federal%20de%20Educa%C3%A7%C3%A3o%2C%20Ci%C3%AAncia%20e%20Tecnologia%20de%20S%C3%A3o%20Paulo%2C%20Campus%20Itapetininga!5e0!3m2!1spt-BR!2sbr!4v1733601209737!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <footer>
+        <div id="fabrica">
+            <a href="https://fabsoftware.itp.ifsp.edu.br/" target="_blank"><img src="img/logos/fabrica.png" alt=""></a>
         </div>
-        <div class="footer">
-          <i class="fa fa-mail-forward"></i>
+
+        <div id="endereco">
+            <a href="https://itp.ifsp.edu.br/" target="_blank"><img src="img/logos/ifHorizontalBranco.png" alt=""></a>
+            <p>Av. João Olímpio de Oliveira, 1561 - Vila Asem, Itapetininga - SP, 18202-000</p>
+            <p>(15) 3376-9930</p>
         </div>
-      </div>
-    </div> <!-- end front panel -->
-    <div class="back">
-      <div class="header">
-        <h5 class="motto">Danilo Camargo Bueno</h5>
-      </div>
-      <div class="content">
-        <p  class="text-justify pa" >Possui graduação em Bacharelado em Informática pela Universidade Estadual de Maringá (2014) e mestrado em Ciência da Computação pela Universidade Federal de São Carlos (2017). Atualmente é professor do Instituto Federal de São Paulo. Tem experiência na área de Ciência da Computação, atuando principalmente nos seguintes temas: Web, Web Mobile, User Interface Adaptation, Multimodal interfaces, Framework front-end e Context-aware interfaces. </p>
-      </div>
-      <div class="footer">
-        <div class="social-links text-center">
-          <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-          <a href="#" class="ml-2 "><i><img class="inv" src="assets/img/cv.png"/></i></a>
+
+        <div id="contato">
+            <p>Contate-nos</p>
+            <div id="icon">
+                <a href="https://www.facebook.com/share/1Dsn2Kp55H/" target="_blank"><img src="img/icones/facebook.png"
+                        alt=""></a>
+                <a href="https://www.instagram.com/ifspitapetininga?igsh=MWJ6dWt2NGc5cG1ncg==" target="_blank"><img
+                        src="img/icones/instagram.png" alt=""></a>
+                <img src="img/icones/telephone.png" alt="">
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+    </footer>
 
-<div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-  <div class="card-container">
-   <div class="card">
-     <div class="front">
-       <div class="cover" style="background-color:#2C2C54;">
-       </div>
-       <div class="user borda-img">
-         <img class="img-circle img-redondo" src="assets/img/docentes/carlosh.jpg"/>
-       </div>
-       <div class="content">
-         <div class="main">
-           <h3 class="name">Carlos Henrique da Silva Santos</h3>
-           <p class="profession">Professor</p>
-         </div>
-         <div class="footer">
-           <i class="fa fa-mail-forward"></i>
-         </div>
-       </div>
-     </div> <!-- end front panel -->
-     <div class="back">
-       <div class="header">
-         <h5 class="motto">Carlos Henrique da Silva Santos</h5>
-       </div>
-       <div class="content">
-         <p class="text-justify pa" >Possui graduação em Tecnologia em Informática pela Universidade Estadual de Campinas (2003), mestrado em Engenharia Elétrica pela Universidade Estadual de Campinas (2005) e doutorado em Engenharia Elétrica pela Universidade Estadual de Campinas (2010). Também possui experiências internacionais, atuando como professor visitante, com bolsa FAPESP, no Massachusetts Institute of Technology (MIT) (Dez/2012-Fev/2013).</p>
-       </div>
-       <div class="footer">
-         <div class="social-links text-center">
-           <a href="#" class=" mr-2 facebook"><i class="fa fa-linkedin fa-fw"></i></a>
-           <a href="#" class="ml-2"><i><img class="inv" src="assets/img/cv.png"/></i></a>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-</div>
-</div>
-</div>
+    <script>
+        let lampada = document.getElementById('lampada');
+        let body = document.body
+        let img = document.getElementById('imgIngressar')
 
-</div>
-</div>
-<!-- Grid row -->
+        lampada.addEventListener('click', () => {
+            body.classList.toggle('modo-escuro')
 
-</section>
-</section>
-<section class="disc" id="disciplinas">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Áreas</h2>
-        <hr class="my-4">
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-pencil fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Desenvolvimento Front-End </h3>
-        </div>
-        <div class="mx-auto service-box mt-5"></div>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-sliders fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="150" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Desenvolvimento Back-End I e II</h3>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5 animation-zomm"><i class="fa fa-database fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="300" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Banco de Dados</h3>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-wifi fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="450" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Redes e Infraestrutura Web </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-users fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">&nbsp;Interação Humano-Computador </h3>
-        </div>
-        <div class="mx-auto service-box mt-5"></div>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-book fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="150" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Metodologia de Pesquisa Científica </h3>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-map-signs fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="300" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Gerenciamento de Projetos</h3>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 text-center">
-        <div class="mx-auto service-box mt-5"><i class="fa fa-mobile fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="200" data-aos-delay="450" data-aos-once="true"></i>
-          <h3 class="mb-3 text-disciplin">Desenvolvimento para Dispositivos Móveis </h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="disc" id="sobre">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Sobre</h2>
-        <hr class="my-4">
-      </div>
-    </div>
-  </div>
-  <div class="container ">
-    <div class="row">
-      <div class="col-md-6 col-lg-6 text-center m-auto">
-        <div class="mx-auto service-box "> <i class="fa fa-3x fa-graduation-cap sr-icons" data-aos="zoom-in" data-aos-duration="150" data-aos-once="true"></i>
-          <h3 class="mb-4 text-disciplin">Carga horária: 2050 horas</h3>
+            img.style.opacity = '0';
 
-        </div>
-        <div class="mx-auto service-box"></div>
-      </div>
-      <div class="col-md-6 col-lg-6 text-center m-auto">
-        <div class="mx-auto service-box"> <i class="fa fa-3x fa-calendar sr-icons" data-aos="zoom-in" data-aos-duration="300" data-aos-once="true"></i>
-          <h3 class="mb-4 text-disciplin">Duração do curso: 36 meses</h3></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-lg-6 text-center m-auto pt-4">
-        <div class="mx-auto service-box animation-zomm"> <i class="fa fa-3x fa-clock-o sr-icons" data-aos="zoom-in" data-aos-duration="450" data-aos-once="true"></i>
-          <h3 class="mb-4 text-disciplin">Dias e horários:<br>segunda à sexta-feira no período noturno</h3>
+            setTimeout(() => {
 
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 text-center  m-auto">
-        <div class="mx-auto service-box"> <i class="fa fa-3x  fa-flag sr-icons" data-aos="zoom-in" data-aos-duration="600" data-aos-once="true"></i>
-          <h3 class="mb-4 text-disciplin">Previsão do início das aula: <br>1º semestre de 2025</h3>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+                if (body.classList.contains('modo-escuro')) {
+                    img.src = "img/logos/if-Escuro.svg"
+                } else {
+                    img.src = "img/logos/if-Claro.svg"
+                }
 
-      <div class="col-md-6 col-lg-6 text-center  m-auto">
-        <div class="mx-auto service-box mt-5"> <i class="fa fa-users fa-3x text-primary sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
-          <h3 class="mb-4 text-disciplin">Vagas: 40 vagas</h3>
+                img.style.opacity = '1';
+            }, 500);
 
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 text-center  m-auto">
-        <div class="mx-auto service-box mt-5"> <i class="fa fa-3x  fa-map-marker sr-icons"  data-aos="zoom-in" data-aos-duration="900" data-aos-once="true"></i>
-          <h3 class="mb-4 text-disciplin">Câmpus: Itapetininga</h3>
-        </div>
-      </div>
+            atualizarCores();
+        })
 
-    </div>
+        function menu() {
+            document.getElementById("menuHamb").classList.toggle("menuClick");
+            document.getElementById("nav").classList.toggle("menuLateral");
+        }
 
-</section>
+        document.querySelectorAll(".secao *").forEach((e) => {
+            e.classList.add("hidden");
+        });
 
+        function rolagem() {
+            document.querySelectorAll(".secao *").forEach((e) => {
+                let rect = e.getBoundingClientRect();
+                let altura = window.innerHeight * 1;
 
-<section data-aos="fade" data-aos-duration="250" data-aos-once="true" id="local" class="mb-0 p-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 id="contact" class="section-heading text-disciplin">Estrutura e Localização</h2>
-        <hr class="my-4">
-        <p class="mb-5  text-disciplin">Entre em contato para melhores esclarecimentos sobre a especialização.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 ml-auto text-center sr-icons"><i class="fa fa-phone fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-once="true"></i>
-        <p><a href="https://www.google.com/search?q=ifsp+itapetininga&amp;oq=ifs&amp;aqs=chrome.0.69i59j69i57j69i60l3.886j0j1&amp;sourceid=chrome&amp;ie=UTF-8#" target="_blank"><strong><span style="text-decoration: underline; color:black;">(15) 3376-9930</span></strong></a></p>
-      </div>
-      <div class="col-lg-4 mr-auto text-center  sr-icons"><i class="fa fa-external-link-square fa-3x mb-3 sr-contact" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" data-aos-once="true"></i>
-        <p><a style="color:black;" href="https://itp.ifsp.edu.br/index.php/pos-graduacao/108-espweb" target="_blank"><strong><span style="text-decoration: underline; color:black;">http://itp.ifsp.edu.br</span></strong></a></p>
-      </div>
-    </div>
-  </div><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCDtlU5gfDCO1n6dDZwPkPo_3T8BoU8iA4&amp;q=Av.+Jo%C3%A3o+Ol%C3%ADmpio+de+Oliveira%2C+1561+-+Vila+Asem%2C+Itapetininga+-+SP%2C+18202-000&amp;zoom=15"
-  width="100%" height="400"></iframe></section>
+                if (rect.top < altura && rect.bottom > 0) {
+                    e.classList.add("show");
+                } else {
+                    e.classList.remove("show");
+                }
+            });
+        }
 
- <!-- Start: Pretty Footer -->
-<footer class="footer-bottom" style="margin-top: 0px;">
-  <div class="row">
+        window.addEventListener("scroll", rolagem);
+        rolagem();
 
-    <div class="col-sm-6 col-md-4 footer-navigation text-center">
-      <p class="company-name">Desenvolvido por</p>
-      <a href="https://fabsoftware.itp.ifsp.edu.br/">
-        <img class="img-fluid mr-auto" width="150px" height="150px" src="./assets/img/logo-claro.svg" alt="logo_if">
-      </a>
-      <p class="company-name mt-2">Fabrica de Softwares © 2024</p>
-    </div>
+    </script>
 
-    <div class="col-sm-6 col-md-4 footer-navigation text-center">
-      <a href="https://itp.ifsp.edu.br/">
-        <img class="img-fluid mr-auto" width="300px" height="300px" src="./assets/img/logo-if.png" alt="logo_if">
-      </a>
-    </div>
+    <script src="script.js"></script>
 
-    <div class="col-sm-6 col-md-4 footer-contacts">
-      <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
-        <p><span class="new-line-span">Av. João Olímpio de Oliveira - Vila Asem</span> Itapetininga, São Paulo</p>
-      </div>
-      <div><i class="fa fa-phone footer-contacts-icon"></i>
-        <p class="footer-center-info email text-left">
-          <p><span class="new-line-span">Av. João Olímpio de Oliveira - Vila Asem</span>(15) 3376-9930</p></p>
-      </div>
-      <div>
-          <i class="fa fa-info footer-contacts-icon"></i>
-          <p target="_blank"><a class="link_rodape" href="https://itp.ifsp.edu.br/index.php/pos-graduacao/108-espweb" target="_blank">itp.ifsp.edu.br</a>    </p>
-      </div>
-    </div>
-
-  </div>
-</footer>
-
-  <!-- End: Pretty Footer -->
-  <script src="assets/js/stats.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/bs-animation.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/creative.js"></script>
-  <script src="assets/js/lermais.js"></script>
-  <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
-  <script  src="./script.js"></script>
 </body>
-
 
 </html>
