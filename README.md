@@ -1,28 +1,36 @@
-# Tecnologia em Sistemas para Internet (TecWeb)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+## Getting Started
 
-# Descrição do Projeto
+First, run the development server:
 
-![TecWeb](./img/telaInicial.png)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-O Curso Superior de Tecnologia em Sistemas para Internet tem por objetivo geral propiciar ao estudante um processo formativo que o habilite desenvolver e empregar os conhecimentos científicos e tecnológicos voltados para as atividades de desenvolvimento, teste, atualização e manutenção de sistemas para Internet e dispositivos móveis, tornando-o capaz de posicionar-se de maneira crítica no mercado e intervir no desenvolvimento econômico e social da sua região, além de contribuir em sua formação como cidadão.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Status do Projeto
-Status: Finalizado.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-# Funcionalidades e Demonstração
-O projeto exibe diversas informações sobre o curso superior de Tecnologia em Sistemas para Internet, principais áreas e disciplinas do curso, como ingressar no curso, informações sobre os docentes, localização e estrutura do Câmpus, dentre outras informações.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-# Instruções de Uso
-Iniciando o repositório para teste ou manutenção, é necessário primeiro abrí-lo; se necessário, primeiro é necessário clona-lo na sua máquina usando no Terminal o comando:
-`git clone (link)`
-Após isso, abra a pasta clonada do TecWeb no VSCode, clique no botão "Go live" que estará localizado no canto inferior esquerdo (é necessario baixar a extensão "Live Server" no VSCode), e então o projeto será iniciado localmente e estará pronto para ser utilizado.
+## Learn More
 
-# Acesso ao Projeto (Link do Projeto)
-[TecWeb](https://tecweb.fabsoftware.itp.ifsp.edu.br/)
+To learn more about Next.js, take a look at the following resources:
 
-# Contribuição/Autores
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/166057576?v=4" width=115><br><sub>Luma Karoline de Siqueira</sub>](https://github.com/maLu70)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
