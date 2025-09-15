@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Abril_Fatface, Imperial_Script, Poppins } from "next/font/google";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ImperialScript = Imperial_Script({
+  variable: "--font-imperial-script",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const AbrilFatface = Abril_Fatface({
+  variable: "--font-abril-fatface",
   subsets: ["latin"],
+  weight: "400",
+});
+
+const PoppinsFont = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${PoppinsFont.className} ${ImperialScript.variable} ${AbrilFatface.variable} antialiased  flex flex-col gap-12 bg-linear-to-b from-light to-neutral-100`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
