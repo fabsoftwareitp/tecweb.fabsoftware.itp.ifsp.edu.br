@@ -54,7 +54,7 @@ export default function Header() {
         }}
         className="w-full z-50 px-12 mt-4 items-center justify-center flex fixed top-0 left-0 pointer-events-none"
       >
-        <div className="w-full max-w-[90vw]  h-18  z-[99999]  border-2 rounded-2xl pointer-events-auto bg-white border-primary items-center justify-between flex px-4">
+        <div className="w-full max-w-[90vw]  h-18  z-50  border-2 rounded-2xl pointer-events-auto bg-white border-primary items-center justify-between flex px-4">
           <Link href="#" className="w-auto h-full">
             <Image src="/ifsp/ifsp1.png" alt="IFSP" width={150} height={150} />
           </Link>

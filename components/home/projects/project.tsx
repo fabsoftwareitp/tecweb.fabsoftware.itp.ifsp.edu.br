@@ -266,7 +266,7 @@ export default function Project({
           <CardsComponent />
         </div>
 
-        <Timeline defaultValue={3} className="z-[999]">
+        <Timeline defaultValue={3}>
           {timelineProps.map((item) => (
             <GenerateTimeline key={item.id} timeline={item} />
           ))}

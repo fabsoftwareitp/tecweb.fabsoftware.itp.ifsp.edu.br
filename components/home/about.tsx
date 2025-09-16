@@ -12,7 +12,7 @@ export default function About() {
     index,
   }: {
     title: string;
-    description: string;
+    description: string[];
     image: string;
     index: number;
   }) => {
@@ -39,7 +39,7 @@ export default function About() {
           className={`w-full flex flex-row gap-2 items-center justify-center border border-neutral-200 rounded-lg h-[200px] bg-linear-to-b from-primary overflow-hidden to-primary/60 ${sortRadial} border-2 border-neutral-200 `}
         >
           <Image
-            src={`/about/${image}`}
+            src={`${image}`}
             alt="Figurinha"
             width={1080}
             height={500}
@@ -48,7 +48,17 @@ export default function About() {
         </div>
         <Separator orientation="horizontal" className="w-full" />
         <h1 className="text-2xl font-bold text-center">{title}</h1>
-        <p className="text-xl">{description}</p>
+        {description.length === 1 ? (
+          <p className="text-xl">{description}</p>
+        ) : (
+          <ul className="list-disc list-inside">
+            {description.map((item, index) => (
+              <li key={item} className="text-xl">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </motion.div>
     );
   };
@@ -65,39 +75,77 @@ export default function About() {
           <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
             <Card
               title="Dias e Horários"
-              description="Segunda á sexta-feira - Período noturno"
-              image="dias.png"
+              description={["Segunda á sexta-feira - Período noturno"]}
+              image="/about/dias.png"
               index={1}
             />
             <Card
               title="Duração do Curso"
-              description="36 Meses"
-              image="duracao.png"
+              description={["36 Meses"]}
+              image="/about/duracao.png"
               index={2}
             />
             <Card
               title="Previsão do início das aulas"
-              description="1º Semestre - 2025"
-              image="previsao.png"
+              description={["1º Semestre - 2025"]}
+              image="/about/previsao.png"
               index={3}
             />
             <Card
               title="Vagas"
-              description="40 Vagas"
-              image="vagas.png"
+              description={["40 Vagas"]}
+              image="/about/vagas.png"
               index={4}
             />
             <Card
               title="Localização"
-              description="Campus Itapetininga"
-              image="localizacao.png"
+              description={["Campus Itapetininga"]}
+              image="/about/localizacao.png"
               index={5}
             />
             <Card
               title="Custo"
-              description="Curso gratuito"
-              image="custo.png"
+              description={["Curso gratuito"]}
+              image="/about/custo.png"
               index={6}
+            />
+          </div>
+          <Text
+            text="Principais Áreas e Disciplinas"
+            className="text-5xl font-bold"
+            spanClassName="text-9xl"
+          />
+          <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+            <Card
+              title="Desenvolvimento Web"
+              description={[
+                "Programação para Web I, II, III e IV",
+                "Desenvolvimento para dispositivos móveis",
+                "Desenvolvimento de Projetos de Web",
+              ]}
+              image="/disciplines/desenvolvimento.png"
+              index={1}
+            />
+            <Card
+              title="Infraestrutura e Sistemas para Internet"
+              description={[
+                "Arquitetura de Computadores",
+                "Sistemas Operacionais",
+                "Administração e Segurança de Redes",
+              ]}
+              image="/disciplines/infraestrutura.png"
+              index={2}
+            />
+            <Card
+              title="Programação e Banco de Dados"
+              description={[
+                "Lógica de Programação",
+                "Engenharia de Software",
+                "Programação Orientada a Objetos",
+                "Banco de Dados I e II",
+              ]}
+              image="/disciplines/programacao.png"
+              index={3}
             />
           </div>
         </div>

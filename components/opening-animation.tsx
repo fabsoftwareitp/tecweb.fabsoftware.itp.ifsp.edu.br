@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function OpeningAnimation() {
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen z-50 overflow-hidden pointer-events-none">
+    <div className="fixed top-0 left-0 w-screen h-screen z-[9999999999] overflow-hidden pointer-events-none">
       <motion.div
         className="w-screen h-screen fixed bg-white opacity-80 z-40 pointer-events-none "
         initial={{ opacity: 1, display: "block" }}
