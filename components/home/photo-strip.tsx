@@ -11,7 +11,7 @@ import {
 } from "../ui/gallery-horizontal-end";
 import Text from "../ui/text";
 
-export const PhotoStrip = () => {
+const PhotoStrip = () => {
   const galleryIconRef = useRef<GalleryHorizontalEndIconHandle>(null);
   const images = Array.from({ length: 15 }, (_, index) => index + 1)
     .sort(() => Math.random() - 0.5)
@@ -113,3 +113,5 @@ export const PhotoStrip = () => {
     </div>
   );
 };
+
+export default PhotoStrip;

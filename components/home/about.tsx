@@ -33,7 +33,7 @@ export default function About() {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 * index }}
-        className="border border-neutral-200 rounded-2xl p-4 flex flex-col gap-2 items-center justify-center w-full max-w-[50em]"
+        className="border border-neutral-200 bg-white rounded-2xl p-4 flex flex-col gap-2 items-center justify-center w-full max-w-[40em]"
       >
         <div
           className={`w-full flex flex-row gap-2 items-center justify-center border border-neutral-200 rounded-lg h-[200px] bg-linear-to-b from-primary overflow-hidden to-primary/60 ${sortRadial} border-2 border-neutral-200 `}
