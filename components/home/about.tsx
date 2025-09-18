@@ -64,7 +64,7 @@ export default function About() {
   };
 
   return (
-    <div className="flex flex-col gap-8 items-center justfiy-center  w-screen h-[3500px]  overflow-visible bg-[url('/background/image4.png')] bg-no-repeat bg-cover">
+    <div className="flex flex-col gap-8 items-center justfiy-center  w-screen h-[3500px]  overflow-visible bg-[url('/background/image5.png')] bg-no-repeat bg-cover">
       <Container className="h-full">
         <div className="w-full  items-center justify-center flex flex-col h-full gap-8">
           <Text
@@ -150,8 +150,6 @@ export default function About() {
           </div>
         </div>
       </Container>
-
-      {/* Adicionar opacidade apenas nas bordas, para fazer a transição de um fundo para o outro   */}
       {/* <Image src="/background/image4.png" alt="About" width={2000} height={2000} className="w-screen h-auto object-contain absolute opacity-50"   /> */}
     </div>
   );
