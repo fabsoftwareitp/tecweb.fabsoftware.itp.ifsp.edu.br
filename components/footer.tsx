@@ -1,9 +1,3 @@
-import Container from "./container";
-
 export default function Footer() {
-  return (
-    <Container>
-      <footer className="w-full h-[800px]"></footer>
-    </Container>
-  );
+  return <footer className="w-full bg-neutral-200 h-[800px]"></footer>;
 }

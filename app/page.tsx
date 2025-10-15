@@ -1,15 +1,13 @@
 "use client";
-import { motion } from "motion/react";
-import Image from "next/image";
 import Container from "@/components/container";
-/* import About from "@/components/home/about"; */
-/* import Introduction from "@/components/home/introduction"; */
-/* import { PhotoStrip } from "@/components/home/photo-strip";
-import { Projects } from "@/components/home/projects"; */
+import { MapComponent } from "@/components/home/map";
+import { Structure } from "@/components/home/structure";
+import { Teachers } from "@/components/home/teachers";
 import TextAnimation from "@/components/home/text-animation";
 import OpeningAnimation from "@/components/opening-animation";
+import { motion } from "motion/react";
 import dynamic from "next/dynamic";
-/* import { Join } from "@/components/home/join"; */
+import Image from "next/image";
 
 const Join = dynamic(() => import("@/components/home/join"));
 const Introduction = dynamic(() => import("@/components/home/introduction"));
@@ -43,6 +41,9 @@ export default function Home() {
       </Container>
       <About />
       <Join />
+      <Teachers />
+      <Structure />
+      <MapComponent />
     </>
   );
 }
