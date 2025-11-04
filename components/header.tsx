@@ -71,22 +71,12 @@ export default function Header() {
 
           <div className="w-fit md:flex hidden flex-row gap-4 flex-wrap ">
             <NavigationMenu className="flex items-center gap-1">
-              <NavigationMenuList className="w-fit">
-                <NavigationMenuItem className="w-fit">
-                  <NavigationMenuTrigger className="flex items-center gap-1 w-fit">
-                    Projetos
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <NavigationMenuLink>Link</NavigationMenuLink>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
               <Separator
                 orientation="vertical"
                 className="w-5 bg-neutral-200  data-[orientation=vertical]:h-5"
               />
               <NavigationMenuLink asChild>
-                <Button icon={CircleHelpIcon} href="#">
+                <Button icon={CircleHelpIcon} href="#sobre">
                   Sobre
                 </Button>
               </NavigationMenuLink>
@@ -95,7 +85,16 @@ export default function Header() {
                 className="w-5 bg-neutral-200  data-[orientation=vertical]:h-5"
               />
               <NavigationMenuLink asChild>
-                <Button icon={UserIcon} href="#">
+                <Button icon={CpuIcon} href="#projetos">
+                  Projetos
+                </Button>
+              </NavigationMenuLink>
+              <Separator
+                orientation="vertical"
+                className="w-5 bg-neutral-200  data-[orientation=vertical]:h-5"
+              />
+              <NavigationMenuLink asChild>
+                <Button icon={UserIcon} href="#docentes">
                   Docentes
                 </Button>
               </NavigationMenuLink>
@@ -104,8 +103,8 @@ export default function Header() {
                 className="w-5 bg-neutral-200  data-[orientation=vertical]:h-5"
               />
               <NavigationMenuLink asChild>
-                <Button icon={BookTextIcon} href="#">
-                  Disciplinas
+                <Button icon={CogIcon} href="#estrutura">
+                  Estrutura
                 </Button>
               </NavigationMenuLink>
               <Separator
@@ -113,13 +112,8 @@ export default function Header() {
                 className="w-5 bg-neutral-200  data-[orientation=vertical]:h-5"
               />
               <NavigationMenuLink asChild>
-                <Button icon={CogIcon} href="#">
-                  Estrutura
-                </Button>
-              </NavigationMenuLink>
-              <NavigationMenuLink asChild>
-                <Button icon={CalendarDaysIcon} href="#">
-                  Monitoria
+                <Button icon={CalendarDaysIcon} href="#localizacao">
+                  Localização
                 </Button>
               </NavigationMenuLink>
             </NavigationMenu>
@@ -129,8 +123,15 @@ export default function Header() {
             <SheetTrigger className="md:hidden">Menu</SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>Menu</SheetTitle>
+                <SheetTitle>Navegação</SheetTitle>
               </SheetHeader>
+              <nav className="mt-6 flex flex-col gap-2">
+                <Link href="#sobre" onClick={() => setOpen(false)} className="py-2">Sobre</Link>
+                <Link href="#projetos" onClick={() => setOpen(false)} className="py-2">Projetos</Link>
+                <Link href="#docentes" onClick={() => setOpen(false)} className="py-2">Docentes</Link>
+                <Link href="#estrutura" onClick={() => setOpen(false)} className="py-2">Estrutura</Link>
+                <Link href="#localizacao" onClick={() => setOpen(false)} className="py-2">Localização</Link>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>

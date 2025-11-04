@@ -1,5 +1,6 @@
 "use client";
 import Container from "@/components/container";
+import CollageBackground from "@/components/home/collage-background";
 import { MapComponent } from "@/components/home/map";
 import { Structure } from "@/components/home/structure";
 import { Teachers } from "@/components/home/teachers";
@@ -35,15 +36,26 @@ export default function Home() {
           />
           <TextAnimation />
         </motion.section>
-        <Introduction />
-        <Projects />
+        <section id="sobre" className="scroll-mt-28">
+          <Introduction />
+        </section>
+        <section id="projetos" className="scroll-mt-28">
+          <Projects />
+        </section>
         <PhotoStrip />
       </Container>
       <About />
       <Join />
-      <Teachers />
-      <Structure />
-      <MapComponent />
+      <section id="docentes" className="scroll-mt-28">
+        <Teachers />
+      </section>
+      <div id="estrutura" className="relative scroll-mt-28">
+        <CollageBackground />
+        <Structure />
+      </div>
+      <section id="localizacao" className="scroll-mt-28">
+        <MapComponent />
+      </section>
     </>
   );
 }

@@ -1,3 +1,9 @@
+import biblioteca from "@/public/structure/biblioteca.png";
+import hardware from "@/public/structure/hardware.jpg";
+import labA from "@/public/structure/labA.jpg";
+import labC from "@/public/structure/labC.jpg";
+import livros from "@/public/structure/livros.png";
+import turma from "@/public/structure/turma.jpeg";
 import Image from "next/image";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
@@ -5,24 +11,12 @@ import Text from "../ui/text";
 
 export const Structure = () => {
   const structure = [
-    {
-      image: "/structure/biblioteca.png",
-    },
-    {
-      image: "/structure/hardware.jpg",
-    },
-    {
-      image: "/structure/labA.jpg",
-    },
-    {
-      image: "/structure/labC.jpg",
-    },
-    {
-      image: "/structure/livros.png",
-    },
-    {
-      image: "/structure/turma.jpeg",
-    },
+    { src: biblioteca, alt: "Biblioteca" },
+    { src: hardware, alt: "Laboratório de Hardware" },
+    { src: labA, alt: "Laboratório A" },
+    { src: labC, alt: "Laboratório C" },
+    { src: livros, alt: "Acervo de Livros" },
+    { src: turma, alt: "Turma" },
   ];
 
   return (
@@ -33,18 +27,23 @@ export const Structure = () => {
         spanClassName="text-7xl"
       />
 
-      <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 w-full max-w-7xl px-4">
         {structure.map((item) => (
-          <Zoom key={`zoom-${item.image}`}>
-            <Image
-              key={item.image}
-              src={item.image}
-              alt="Estrutura"
-              width={500}
-              height={500}
-              className="w-[500px] h-[500px] object-cover rounded-2xl"
-            />
-          </Zoom>
+          <div
+            key={item.alt}
+            className="mb-6 break-inside-avoid rounded-2xl overflow-hidden"
+          >
+            <Zoom>
+              <Image
+                src={item.src}
+                alt={item.alt}
+                placeholder="blur"
+                className="w-full h-auto rounded-2xl"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                priority={false}
+              />
+            </Zoom>
+          </div>
         ))}
       </div>
     </div>
