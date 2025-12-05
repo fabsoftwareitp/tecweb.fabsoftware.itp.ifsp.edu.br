@@ -1,8 +1,8 @@
 "use client";
 
+import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useMemo, useRef } from "react";
-import gsap from "gsap";
 
 const collageSvgs = [
   "/collage/fig1.svg",
@@ -45,14 +45,21 @@ export default function CollageBackground() {
         const startX = dir === "ltr" ? -margin : cw + margin;
         const endX = dir === "ltr" ? cw + margin : -margin;
 
-        const pickY = () => Math.max(0, Math.min(ch - 120, gsap.utils.random(0, ch)));
+        const pickY = () =>
+          Math.max(0, Math.min(ch - 120, gsap.utils.random(0, ch)));
         const pickDelta = () => gsap.utils.random(80, 200);
         const pickDelay = () => gsap.utils.random(1.5, 3);
         const pickRot = () => gsap.utils.random(-12, 12);
         const pickScale = () => gsap.utils.random(0.85, 1.08);
 
         let x = startX;
-        gsap.set(node, { x, y: pickY(), rotation: pickRot(), scale: pickScale(), opacity: 0 });
+        gsap.set(node, {
+          x,
+          y: pickY(),
+          rotation: pickRot(),
+          scale: pickScale(),
+          opacity: 0,
+        });
         gsap.to(node, { opacity: 0.45, duration: 0.2, ease: "power2.out" });
 
         const step = () => {
@@ -67,7 +74,12 @@ export default function CollageBackground() {
           }
 
           // Teleport instantly to the new position with slight randomization
-          gsap.set(node, { x, y: pickY(), rotation: pickRot(), scale: pickScale() });
+          gsap.set(node, {
+            x,
+            y: pickY(),
+            rotation: pickRot(),
+            scale: pickScale(),
+          });
           gsap.delayedCall(pickDelay(), step);
         };
 
@@ -112,5 +124,3 @@ export default function CollageBackground() {
     </div>
   );
 }
-
-

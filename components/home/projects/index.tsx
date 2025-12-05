@@ -4,13 +4,13 @@ import IfCasaAberta from "./if-casa-aberta";
 
 const Projects = () => {
   return (
-    <div className="flex flex-col gap-8 items-center w-full mt-12">
+    <div className="flex flex-col gap-8 items-center w-full mt-8 md:mt-12 px-4 md:px-0">
       <Text
         text="Projetos"
-        className="text-4xl font-bold"
-        spanClassName="text-7xl"
+        className="text-2xl md:text-4xl font-bold"
+        spanClassName="text-4xl md:text-7xl"
       />
-      <div className="flex flex-col gap-52">
+      <div className="flex flex-col gap-24 md:gap-52 w-full">
         <IfCasaAberta />
         <Ernesta />
       </div>

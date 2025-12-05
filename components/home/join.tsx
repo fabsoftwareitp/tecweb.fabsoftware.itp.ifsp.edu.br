@@ -3,7 +3,6 @@ import Text from "../ui/text";
 import {
   Timeline,
   TimelineContent,
-  TimelineDate,
   TimelineHeader,
   TimelineIndicator,
   TimelineItem,
@@ -43,37 +42,37 @@ const items = [
 
 export default function Join() {
   return (
-    <div className="flex flex-col gap-8 items-center w-full relative mt-24">
+    <div className="flex flex-col gap-8 items-center w-full relative mt-12 md:mt-24 px-4 md:px-0">
       <Image
         src="/ifsp/if-claro.svg"
         alt="Join"
         width={1000}
         height={1000}
-        className="absolute top-0 left-0 h-full w-auto"
+        className="absolute top-0 left-0 h-full w-auto opacity-30 md:opacity-100 hidden md:block"
       />
       <Container>
         <div className="flex flex-col gap-8 items-center w-full relative">
           <Text
             text="Como ingressar"
-            className="text-4xl font-bold"
-            spanClassName="text-7xl"
+            className="text-2xl md:text-4xl font-bold"
+            spanClassName="text-4xl md:text-7xl"
           />
-          <Timeline defaultValue={5}>
+          <Timeline defaultValue={5} className="w-full">
             {items.map((item) => (
               <TimelineItem
                 key={item.id}
                 step={item.id}
-                className="w-[calc(50%-1.5rem)] odd:ms-auto even:text-right even:group-data-[orientation=vertical]/timeline:ms-0 even:group-data-[orientation=vertical]/timeline:me-8 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:translate-x-1/2 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:-right-6 even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:left-auto even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:translate-x-1/2"
+                className="w-full md:w-[calc(50%-1.5rem)] md:odd:ms-auto md:even:text-right md:even:group-data-[orientation=vertical]/timeline:ms-0 md:even:group-data-[orientation=vertical]/timeline:me-8 md:even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:-right-6 md:even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:left-auto md:even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-indicator]]:translate-x-1/2 md:even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:-right-6 md:even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:left-auto md:even:group-data-[orientation=vertical]/timeline:[&_[data-slot=timeline-separator]]:translate-x-1/2 ms-8 md:ms-0"
               >
                 <TimelineHeader>
-                  <TimelineSeparator />
-                  <TimelineTitle className="text-2xl font-extrabold text-primary">
+                  <TimelineSeparator className="-left-6 md:left-auto" />
+                  <TimelineTitle className="text-lg md:text-2xl font-extrabold text-primary">
                     {item.title}
                   </TimelineTitle>
-                  <TimelineContent className="text-xl text-neutral-800">
+                  <TimelineContent className="text-base md:text-xl text-neutral-800">
                     {item.description}
                   </TimelineContent>
-                  <TimelineIndicator className="bg-yellow-500  group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center border-none ">
+                  <TimelineIndicator className="bg-yellow-500 group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center border-none -left-6 md:left-auto">
                     {/* @ts-ignore */}
                     <item.icon size={18} className="text-white" />
                   </TimelineIndicator>

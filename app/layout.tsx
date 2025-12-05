@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Abril_Fatface, Imperial_Script, Poppins } from "next/font/google";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import GlobalEffects from "@/components/effects/global-effects";
+import SmoothScroll from "@/components/smooth-scroll";
 import "./globals.css";
 
 const ImperialScript = Imperial_Script({
@@ -54,10 +56,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${PoppinsFont.className} ${ImperialScript.variable} ${AbrilFatface.variable} antialiased  flex flex-col gap-12 bg-linear-to-b from-light to-neutral-100`}
+        className={`${PoppinsFont.className} ${ImperialScript.variable} ${AbrilFatface.variable} antialiased flex flex-col gap-6 md:gap-12 bg-linear-to-b from-light to-neutral-100 overflow-x-hidden`}
       >
+        <SmoothScroll />
+        <GlobalEffects />
         <Header />
         {children}
         <Footer />

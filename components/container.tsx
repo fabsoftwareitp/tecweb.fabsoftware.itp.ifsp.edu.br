@@ -10,7 +10,7 @@ export default function Container({
   return (
     <div
       className={cn(
-        "md:max-w-[90vw] w-full md:mx-auto flex flex-col gap-48",
+        "max-w-[95vw] md:max-w-[90vw] w-full mx-auto flex flex-col gap-24 md:gap-48 px-4 md:px-0",
         className,
       )}
     >

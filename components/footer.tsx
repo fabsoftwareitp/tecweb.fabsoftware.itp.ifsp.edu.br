@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="w-full mt-16">
-      <div className="w-full flex items-center justify-center">
-        <div className="w-full lg:max-w-[90vw] border-2 lg:rounded-2xl bg-white border-primary px-6 py-10">
+      <div className="w-full">
+        <div className="w-full border-t-2 bg-white border-primary px-6 md:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3">
@@ -32,21 +33,21 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <p className="text-neutral-900 font-medium">Navegação</p>
               <nav className="flex flex-col gap-1 text-sm text-neutral-700">
-                <a href="#sobre" className="hover:text-primary">
+                <a href="/#sobre" className="hover:text-primary">
                   Sobre
                 </a>
-                <a href="#projetos" className="hover:text-primary">
+                <a href="/#projetos" className="hover:text-primary">
                   Projetos
                 </a>
-                <a href="#docentes" className="hover:text-primary">
+                <a href="/#docentes" className="hover:text-primary">
                   Docentes
                 </a>
-                <a href="#disciplinas" className="hover:text-primary">
-                  Disciplinas
-                </a>
-                <a href="#estrutura" className="hover:text-primary">
+                <a href="/#estrutura" className="hover:text-primary">
                   Estrutura
                 </a>
+                <Link href="/galeria" className="hover:text-primary">
+                  Galeria
+                </Link>
               </nav>
             </div>
 

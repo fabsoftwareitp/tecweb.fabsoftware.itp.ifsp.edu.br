@@ -33,27 +33,27 @@ export default function About() {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 * index }}
-        className="border border-neutral-200 bg-white rounded-2xl p-4 flex flex-col gap-2 items-center justify-center w-full max-w-[40em]"
+        className="border border-neutral-200 bg-white rounded-2xl p-3 md:p-4 flex flex-col gap-2 items-center justify-center w-full max-w-full sm:max-w-[calc(50%-0.5rem)] lg:max-w-[40em]"
       >
         <div
-          className={`w-full flex flex-row gap-2 items-center justify-center border border-neutral-200 rounded-lg h-[200px] bg-linear-to-b from-primary overflow-hidden to-primary/60 ${sortRadial} border-2 border-neutral-200 `}
+          className={`w-full flex flex-row gap-2 items-center justify-center border border-neutral-200 rounded-lg h-[150px] md:h-[200px] bg-linear-to-b from-primary overflow-hidden to-primary/60 ${sortRadial} border-2 border-neutral-200`}
         >
           <Image
             src={`${image}`}
             alt="Figurinha"
             width={1080}
             height={500}
-            className={` object-cover rounded-2xl rotate-[${sortRotate}deg] w-full h-full`}
+            className={`object-cover rounded-2xl rotate-[${sortRotate}deg] w-full h-full`}
           />
         </div>
         <Separator orientation="horizontal" className="w-full" />
-        <h1 className="text-2xl font-bold text-center">{title}</h1>
+        <h1 className="text-lg md:text-2xl font-bold text-center">{title}</h1>
         {description.length === 1 ? (
-          <p className="text-xl">{description}</p>
+          <p className="text-base md:text-xl text-center">{description}</p>
         ) : (
           <ul className="list-disc list-inside">
-            {description.map((item, index) => (
-              <li key={item} className="text-xl">
+            {description.map((item) => (
+              <li key={item} className="text-sm md:text-xl">
                 {item}
               </li>
             ))}
@@ -64,15 +64,15 @@ export default function About() {
   };
 
   return (
-    <div className="flex flex-col gap-8 items-center justfiy-center  w-screen h-[3500px]  overflow-visible bg-[url('/background/image5.png')] bg-no-repeat bg-cover">
+    <div className="flex flex-col gap-8 items-center justfiy-center w-screen h-[3500px] overflow-visible bg-[url('/background/image5.png')] bg-no-repeat bg-cover">
       <Container className="h-full">
-        <div className="w-full  items-center justify-center flex flex-col h-full gap-8">
+        <div className="w-full items-center justify-center flex flex-col h-full gap-8 px-4 md:px-0">
           <Text
             text="Sobre"
-            className="text-5xl font-bold"
-            spanClassName="text-9xl"
+            className="text-3xl md:text-5xl font-bold"
+            spanClassName="text-5xl md:text-9xl"
           />
-          <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+          <div className="flex flex-row gap-3 md:gap-4 flex-wrap items-center justify-center">
             <Card
               title="Dias e Horários"
               description={["Segunda á sexta-feira - Período noturno"]}
@@ -112,10 +112,10 @@ export default function About() {
           </div>
           <Text
             text="Principais Áreas e Disciplinas"
-            className="text-5xl font-bold"
-            spanClassName="text-9xl"
+            className="text-2xl md:text-5xl font-bold text-center"
+            spanClassName="text-4xl md:text-9xl"
           />
-          <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+          <div className="flex flex-row gap-3 md:gap-4 flex-wrap items-center justify-center">
             <Card
               title="Desenvolvimento Web"
               description={[
@@ -150,7 +150,6 @@ export default function About() {
           </div>
         </div>
       </Container>
-      {/* <Image src="/background/image4.png" alt="About" width={2000} height={2000} className="w-screen h-auto object-contain absolute opacity-50"   /> */}
     </div>
   );
 }

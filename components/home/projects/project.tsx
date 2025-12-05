@@ -67,10 +67,10 @@ export default function Project({
   const arrowRightRef = useRef<ArrowRightIconHandle>(null);
   const Collages = () => {
     const topCollagePosition =
-      collagesPosition.top === "left" ? " left-[-50px]" : "right-[-50px]";
+      collagesPosition.top === "left" ? "left-[-20px] md:left-[-50px]" : "right-[-20px] md:right-[-50px]";
 
     const bottomCollagePosition =
-      collagesPosition.bottom === "right" ? " right-[-50px]" : " left-[-50px]";
+      collagesPosition.bottom === "right" ? "right-[-20px] md:right-[-50px]" : "left-[-20px] md:left-[-50px]";
 
     return (
       <>
@@ -79,7 +79,7 @@ export default function Project({
           whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
           transition={{ duration: 0.5 }}
           className={cn(
-            "transition-all duration-500 absolute top-[-50px] rounded-2xl object-cover w-[100px] h-[100px] rotate-[-20deg] z-10",
+            "transition-all duration-500 absolute top-[-30px] md:top-[-50px] rounded-2xl object-cover w-[60px] md:w-[100px] h-[60px] md:h-[100px] rotate-[-20deg] z-10",
             topCollagePosition,
           )}
         >
@@ -96,7 +96,7 @@ export default function Project({
           transition={{ duration: 0.5 }}
           initial={{ opacity: 0, y: 10, rotate: 20, scale: 0 }}
           className={cn(
-            "absolute bottom-[-50px] rounded-2xl object-cover w-[100px] h-[100px] rotate-[20deg] z-10",
+            "absolute bottom-[-30px] md:bottom-[-50px] rounded-2xl object-cover w-[60px] md:w-[100px] h-[60px] md:h-[100px] rotate-[20deg] z-10",
             bottomCollagePosition,
           )}
         >
@@ -120,7 +120,7 @@ export default function Project({
         {Cards.map((card, index) => (
           <Fragment key={card.title}>
             <motion.div
-              className="w-full flex flex-col gap-2 p-4 rounded-2xl  "
+              className="w-full flex flex-col gap-2 p-2 md:p-4 rounded-2xl"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -134,30 +134,23 @@ export default function Project({
               <div className="flex flex-row gap-2 items-center justify-center">
                 <Separator
                   orientation="horizontal"
-                  className="data-[orientation=horizontal]:w-[30%]"
+                  className="hidden md:block data-[orientation=horizontal]:w-[30%]"
                 />
                 <div className="flex flex-row gap-2 items-center justify-center">
-                  {/* @ts-ignore */}
-                  {/*  <card.icon
-                    size={20}
-                    className="text-yellow-500"
-                    ref={infoRef}
-                  /> */}
-                  <h2 className="text-2xl font-bold text-center">
+                  <h2 className="text-lg md:text-2xl font-bold text-center">
                     {card.title}
                   </h2>
                 </div>
                 <Separator
                   orientation="horizontal"
-                  className="data-[orientation=horizontal]:w-[30%]"
+                  className="hidden md:block data-[orientation=horizontal]:w-[30%]"
                 />
               </div>
-              {/*  <p className="z-[999] text-xl">{card.description}</p> */}
             </motion.div>
 
             {index < Cards.length - 1 && (
               <Separator
-                className="mx-4 data-[orientation=vertical]:h-[50px]"
+                className="mx-4 data-[orientation=vertical]:h-[50px] hidden md:block"
                 orientation="vertical"
               />
             )}
@@ -167,25 +160,27 @@ export default function Project({
     );
   };
 
-  const Left = () => {
+  const ImagesSection = () => {
     return (
-      <div className="flex flex-row gap-2 relative w-full max-w-[40%] max-h-[550px]">
-        <Collages />
+      <div className="flex flex-col md:flex-row gap-2 relative w-full lg:max-w-[40%] max-h-none lg:max-h-[550px]">
+        <div className="hidden md:block">
+          <Collages />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-[50%] rounded-2xl object-cover"
+          className="w-full md:max-w-[50%] rounded-2xl object-cover"
         >
           <Image
             src={images[0].src}
             alt={images[0].alt}
             width={500}
             height={500}
-            className="w-full h-full rounded-2xl object-cover hover:scale-105 transition-all duration-500"
+            className="w-full h-[200px] md:h-full rounded-2xl object-cover hover:scale-105 transition-all duration-500"
           />
         </motion.div>
-        <div className="flex flex-col gap-2  justify-between relative">
+        <div className="grid grid-cols-2 md:flex md:flex-col gap-2 justify-between relative">
           <motion.div
             initial={{ opacity: 0, x: 10 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -197,7 +192,7 @@ export default function Project({
               width={500}
               height={500}
               className={cn(
-                "rounded-2xl h-full w-auto object-cover hover:scale-[1.02] transition-all duration-500",
+                "rounded-2xl h-[120px] md:h-full w-full md:w-auto object-cover hover:scale-[1.02] transition-all duration-500",
                 images[1].className,
               )}
             />
@@ -214,36 +209,34 @@ export default function Project({
               width={500}
               height={500}
               className={cn(
-                "rounded-2xl object-cover hover:scale-[1.02] transition-all duration-500",
+                "rounded-2xl h-[120px] md:h-auto w-full object-cover hover:scale-[1.02] transition-all duration-500",
                 images[2].className,
               )}
             />
           </motion.div>
 
-          {images.length > 2 &&
-            images.map(
-              (image, index) =>
-                index > 2 && (
-                  <motion.div
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
-                    key={image.src}
-                  >
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={500}
-                      height={500}
-                      className={cn(
-                        "rounded-2xl object-cover hover:scale-[1.02] transition-all duration-500",
-                        image.className,
-                      )}
-                    />
-                  </motion.div>
-                ),
-            )}
-          <div className="flex items-center justify-center w-full absolute bottom-2">
+          {images.length > 3 &&
+            images.slice(3).map((image) => (
+              <motion.div
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                key={image.src}
+                className="hidden md:block"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={500}
+                  height={500}
+                  className={cn(
+                    "rounded-2xl object-cover hover:scale-[1.02] transition-all duration-500",
+                    image.className,
+                  )}
+                />
+              </motion.div>
+            ))}
+          <div className="hidden md:flex items-center justify-center w-full absolute bottom-2">
             <Link
               href="#"
               onMouseEnter={() => arrowRightRef.current?.startAnimation()}
@@ -255,14 +248,25 @@ export default function Project({
             </Link>
           </div>
         </div>
+        <div className="flex md:hidden items-center justify-center w-full mt-2">
+          <Link
+            href="#"
+            onMouseEnter={() => arrowRightRef.current?.startAnimation()}
+            onMouseLeave={() => arrowRightRef.current?.stopAnimation()}
+          >
+            <Badge variant="outline" className="bg-white">
+              Ver mais <ArrowRightIcon ref={arrowRightRef} size={18} />
+            </Badge>
+          </Link>
+        </div>
       </div>
     );
   };
 
-  const Right = () => {
+  const TimelineSection = () => {
     return (
-      <div className="flex flex-col gap-4">
-        <div role="alert" className="flex flex-row gap-2 items-center">
+      <div className="flex flex-col gap-4 w-full lg:w-auto">
+        <div role="alert" className="flex flex-row gap-2 items-center justify-center lg:justify-start">
           <CardsComponent />
         </div>
 
@@ -291,15 +295,15 @@ export default function Project({
         onMouseLeave={() => iconRef.current?.stopAnimation()}
       >
         <TimelineHeader>
-          <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-6.5 " />
-          <TimelineTitle className="mt-0.5 text-2xl font-extrabold text-primary">
+          <TimelineSeparator className="group-data-[orientation=vertical]/timeline:-left-7 group-data-[orientation=vertical]/timeline:h-[calc(100%-1.5rem-0.25rem)] group-data-[orientation=vertical]/timeline:translate-y-6.5" />
+          <TimelineTitle className="mt-0.5 text-lg md:text-2xl font-extrabold text-primary">
             {item.title}
           </TimelineTitle>
           <TimelineIndicator className="bg-yellow-500 group-data-completed/timeline-item:bg-yellow-500 group-data-completed/timeline-item:text-primary-foreground flex size-6 items-center justify-center border-none group-data-[orientation=vertical]/timeline:-left-7">
             <item.icon size={18} ref={iconRef} />
           </TimelineIndicator>
         </TimelineHeader>
-        <TimelineContent className="text-xl text-neutral-800">
+        <TimelineContent className="text-base md:text-xl text-neutral-800">
           {item.description}
         </TimelineContent>
       </TimelineItem>
@@ -308,17 +312,17 @@ export default function Project({
 
   return (
     <AnimatePresence>
-      <section className="flex flex-row gap-4 ">
+      <section className="flex flex-col lg:flex-row gap-6 lg:gap-4 px-4 md:px-0">
         {variant === "leftToRight" && (
           <>
-            <Left />
-            <Right />
+            <ImagesSection />
+            <TimelineSection />
           </>
         )}
         {variant === "rightToLeft" && (
           <>
-            <Right />
-            <Left />
+            <TimelineSection />
+            <ImagesSection />
           </>
         )}
       </section>

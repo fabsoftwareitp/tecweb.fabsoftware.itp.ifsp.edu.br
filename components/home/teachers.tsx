@@ -107,23 +107,23 @@ export const Teachers = () => {
   ];
 
   return (
-    <>
-      <div className="w-full items-center justify-center flex">
+    <div className="px-4 md:px-0">
+      <div className="w-full items-center justify-center flex mb-8">
         <Text
           text="Docentes"
-          className="text-4xl font-bold"
-          spanClassName="text-7xl"
+          className="text-2xl md:text-4xl font-bold"
+          spanClassName="text-4xl md:text-7xl"
         />
       </div>
 
       <div className="flex items-center justify-center w-full">
-        <div className="max-w-[1200px] grid grid-cols-3 items-start justify-center w-full flex-wrap gap-12">
+        <div className="max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start justify-center w-full gap-6 md:gap-12">
           {teachers.map((teacher) => (
-            <div className="w-fit" key={teacher.name}>
+            <div className="w-full flex justify-center" key={teacher.name}>
               <CometCard key={teacher.name}>
                 <button
                   type="button"
-                  className="flex w-80 border  border-primary flex-col items-stretch rounded-[16px]  bg-white p-2   md:p-4"
+                  className="flex w-full max-w-[320px] border border-primary flex-col items-stretch rounded-[16px] bg-white p-2 md:p-4"
                   aria-label="View invite F7RA"
                   style={{
                     transformStyle: "preserve-3d",
@@ -132,10 +132,10 @@ export const Teachers = () => {
                   }}
                 >
                   <div className="mx-2 flex-1">
-                    <div className="relative mt-2 h-[250px] w-full">
+                    <div className="relative mt-2 h-[200px] md:h-[250px] w-full">
                       <Image
                         loading="lazy"
-                        className="absolute inset-0 h-full w-full rounded-[16px] bg-secondary  object-cover contrast-75"
+                        className="absolute inset-0 h-full w-full rounded-[16px] bg-secondary object-cover contrast-75"
                         alt="Invite background"
                         src={teacher.image}
                         width={500}
@@ -154,7 +154,7 @@ export const Teachers = () => {
                         alt="Teacher"
                         width={50}
                         height={50}
-                        className="absolute w-[50px] h-[50px] inset-0 rounded-[16px]  contrast-75 top-[-20px] left-[-20px] rotate-[0deg]"
+                        className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] inset-0 rounded-[16px] contrast-75 top-[-15px] md:top-[-20px] left-[-15px] md:left-[-20px] rotate-[0deg]"
                       />
                       <Image
                         src={
@@ -165,18 +165,18 @@ export const Teachers = () => {
                         alt="Teacher"
                         width={50}
                         height={50}
-                        className="absolute w-[50px] h-[50px]  rounded-[16px]  contrast-75 bottom-[-20px] right-[-20px] rotate-[0deg]"
+                        className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] rounded-[16px] contrast-75 bottom-[-15px] md:bottom-[-20px] right-[-15px] md:right-[-20px] rotate-[0deg]"
                       />
                     </div>
                   </div>
                   <div className="flex flex-col">
-                    <div className="mt-2 flex flex-shrink-0 items-center justify-between px-1 font-mono text-[#0f611c]">
-                      <div className="text-xs font-bold ">{teacher.name}</div>
+                    <div className="mt-2 flex flex-shrink-0 flex-col sm:flex-row items-start sm:items-center justify-between px-1 font-mono text-[#0f611c] gap-1">
+                      <div className="text-xs font-bold">{teacher.name}</div>
                       <div className="text-xs opacity-50">
                         {teacher.description}
                       </div>
                     </div>
-                    <div className="text-xs text-justify p-4 bg-neutral-100 border border-primary rounded-lg mt-2">
+                    <div className="text-xs text-justify p-3 md:p-4 bg-neutral-100 border border-primary rounded-lg mt-2">
                       {teacher.about}
                     </div>
                   </div>
@@ -186,6 +186,6 @@ export const Teachers = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
