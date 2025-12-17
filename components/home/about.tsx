@@ -1,0 +1,155 @@
+import Image from "next/image";
+import Container from "../container";
+import { Separator } from "../ui/separator";
+import Text from "../ui/text";
+import { motion } from "motion/react";
+
+export default function About() {
+  const Card = ({
+    title,
+    description,
+    image,
+    index,
+  }: {
+    title: string;
+    description: string[];
+    image: string;
+    index: number;
+  }) => {
+    const radial = {
+      1: "bg-radial-[at_50%_50%]",
+      2: "bg-radial-[at_50%_75%]",
+      3: "bg-radial-[at_25%_25%]",
+      4: "bg-radial-[at_75%_75%]",
+      5: "bg-radial-[at_25%_75%]",
+      6: "bg-radial-[at_75%_25%]",
+    };
+    const sortRadial =
+      radial[Number(Math.floor(Math.random() * 6) + 1) as keyof typeof radial];
+    const sortRotate = Math.floor(Math.random() * 360);
+
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 * index }}
+        className="border border-neutral-200 bg-white rounded-2xl p-3 md:p-4 flex flex-col gap-2 items-center justify-center w-full max-w-full sm:max-w-[calc(50%-0.5rem)] lg:max-w-[40em]"
+      >
+        <div
+          className={`w-full flex flex-row gap-2 items-center justify-center border border-neutral-200 rounded-lg h-[150px] md:h-[200px] bg-linear-to-b from-primary overflow-hidden to-primary/60 ${sortRadial} border-2 border-neutral-200`}
+        >
+          <Image
+            src={`${image}`}
+            alt="Figurinha"
+            width={1080}
+            height={500}
+            className={`object-cover rounded-2xl rotate-[${sortRotate}deg] w-full h-full`}
+          />
+        </div>
+        <Separator orientation="horizontal" className="w-full" />
+        <h1 className="text-lg md:text-2xl font-bold text-center">{title}</h1>
+        {description.length === 1 ? (
+          <p className="text-base md:text-xl text-center">{description}</p>
+        ) : (
+          <ul className="list-disc list-inside">
+            {description.map((item) => (
+              <li key={item} className="text-sm md:text-xl">
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
+      </motion.div>
+    );
+  };
+
+  return (
+    <div className="flex flex-col gap-8 items-center justfiy-center w-screen h-[3500px] overflow-visible bg-[url('/background/image5.png')] bg-no-repeat bg-cover">
+      <Container className="h-full">
+        <div className="w-full items-center justify-center flex flex-col h-full gap-8 px-4 md:px-0">
+          <Text
+            text="Sobre"
+            className="text-3xl md:text-5xl font-bold"
+            spanClassName="text-5xl md:text-9xl"
+          />
+          <div className="flex flex-row gap-3 md:gap-4 flex-wrap items-center justify-center">
+            <Card
+              title="Dias e Horários"
+              description={["Segunda á sexta-feira - Período noturno"]}
+              image="/about/dias.png"
+              index={1}
+            />
+            <Card
+              title="Duração do Curso"
+              description={["36 Meses"]}
+              image="/about/duracao.png"
+              index={2}
+            />
+            <Card
+              title="Previsão do início das aulas"
+              description={["1º Semestre - 2025"]}
+              image="/about/previsao.png"
+              index={3}
+            />
+            <Card
+              title="Vagas"
+              description={["40 Vagas"]}
+              image="/about/vagas.png"
+              index={4}
+            />
+            <Card
+              title="Localização"
+              description={["Campus Itapetininga"]}
+              image="/about/localizacao.png"
+              index={5}
+            />
+            <Card
+              title="Custo"
+              description={["Curso gratuito"]}
+              image="/about/custo.png"
+              index={6}
+            />
+          </div>
+          <Text
+            text="Principais Áreas e Disciplinas"
+            className="text-2xl md:text-5xl font-bold text-center"
+            spanClassName="text-4xl md:text-9xl"
+          />
+          <div className="flex flex-row gap-3 md:gap-4 flex-wrap items-center justify-center">
+            <Card
+              title="Desenvolvimento Web"
+              description={[
+                "Programação para Web I, II, III e IV",
+                "Desenvolvimento para dispositivos móveis",
+                "Desenvolvimento de Projetos de Web",
+              ]}
+              image="/disciplines/desenvolvimento.png"
+              index={1}
+            />
+            <Card
+              title="Infraestrutura e Sistemas para Internet"
+              description={[
+                "Arquitetura de Computadores",
+                "Sistemas Operacionais",
+                "Administração e Segurança de Redes",
+              ]}
+              image="/disciplines/infraestrutura.png"
+              index={2}
+            />
+            <Card
+              title="Programação e Banco de Dados"
+              description={[
+                "Lógica de Programação",
+                "Engenharia de Software",
+                "Programação Orientada a Objetos",
+                "Banco de Dados I e II",
+              ]}
+              image="/disciplines/programacao.png"
+              index={3}
+            />
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+}
